@@ -1,1 +1,2 @@
 pokus
+UPDATE: SCH, conn.lib , USB-B
