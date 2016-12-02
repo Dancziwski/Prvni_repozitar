@@ -1,0 +1,529 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="logo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>resources\logo1.bmp;System.Byte[], mscorlib, Version=4.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="scrCatGutChScr0Cat1" xml:space="preserve">
+    <value>Tryska 1</value>
+  </data>
+  <data name="scrCatGutChScr0Cat2" xml:space="preserve">
+    <value>Tryska 2</value>
+  </data>
+  <data name="scrCatGutChScr0Tx1" xml:space="preserve">
+    <value>Zvolte trysku pro výměnu</value>
+  </data>
+  <data name="scrCatGutChScr1Tx1" xml:space="preserve">
+    <value>Vyčkejte na nahřátí trysky.</value>
+  </data>
+  <data name="scrCatGutChScr2Tx1" xml:space="preserve">
+    <value>Přejete si vyjmout nebo zavést filament do tiskárny?</value>
+  </data>
+  <data name="scrCatGutChScr3Tx1" xml:space="preserve">
+    <value>Dochází k vysouvání struny, vyčkejte dokud nebude zcela vysunuta.</value>
+  </data>
+  <data name="scrCatGutChScr4Tx1" xml:space="preserve">
+    <value>Zvolte typ struny...</value>
+  </data>
+  <data name="scrCatGutChScr5Tx1" xml:space="preserve">
+    <value>Dochází k natažení struny, v případě potřeby použijte tlačítko opakovat. Poté ukončete výměnu.</value>
+  </data>
+  <data name="scrCatGutChTxMain" xml:space="preserve">
+    <value>Výměna struny</value>
+  </data>
+  <data name="scrInfoNameCompany" xml:space="preserve">
+    <value>Výrobce:</value>
+  </data>
+  <data name="scrInfoNameTraffic" xml:space="preserve">
+    <value>Provozní doba:</value>
+  </data>
+  <data name="scrInfoNameProduct" xml:space="preserve">
+    <value>Produkt:</value>
+  </data>
+  <data name="scrInfoTrafficTime" xml:space="preserve">
+    <value />
+  </data>
+  <data name="scrMainBtInfo" xml:space="preserve">
+    <value>Informace</value>
+  </data>
+  <data name="scrMainBtPrint" xml:space="preserve">
+    <value>Tisk</value>
+  </data>
+  <data name="scrMainBtSetting" xml:space="preserve">
+    <value>Nastavení</value>
+  </data>
+  <data name="scrMaintBtShutDown" xml:space="preserve">
+    <value>Vypnutí</value>
+  </data>
+  <data name="scrMainTxMain" xml:space="preserve">
+    <value>Hlavní menu</value>
+  </data>
+  <data name="scrModelBtPreheat" xml:space="preserve">
+    <value>Předehřev</value>
+  </data>
+  <data name="scrModelBtPrint" xml:space="preserve">
+    <value>Tisk</value>
+  </data>
+  <data name="scrModelTxMain" xml:space="preserve">
+    <value>Výběr modelu</value>
+  </data>
+  <data name="scrPauseBtStop" xml:space="preserve">
+    <value>Ukončit tisk</value>
+  </data>
+  <data name="scrPauseTxInfo" xml:space="preserve">
+    <value>Tisk modelu pozastaven</value>
+  </data>
+  <data name="scrPauseTxMain" xml:space="preserve">
+    <value>Pauza</value>
+  </data>
+  <data name="scrPreheatBtOff" xml:space="preserve">
+    <value>Vypnout předehřívání</value>
+  </data>
+  <data name="scrPreheatBtOn" xml:space="preserve">
+    <value>Zapnout předehřívání</value>
+  </data>
+  <data name="scrPreheatTx1" xml:space="preserve">
+    <value>Teplota trysky 1:</value>
+  </data>
+  <data name="scrPreheatTx2" xml:space="preserve">
+    <value>Teplota trysky 2:</value>
+  </data>
+  <data name="scrPreheatTx4" xml:space="preserve">
+    <value>Nastavená</value>
+  </data>
+  <data name="scrPreheatTx5" xml:space="preserve">
+    <value>Aktuální</value>
+  </data>
+  <data name="scrPreheatTx6" xml:space="preserve">
+    <value>Teplota podložky</value>
+  </data>
+  <data name="scrPreheatTx7" xml:space="preserve">
+    <value>Teplota prostoru</value>
+  </data>
+  <data name="scrPreheatTxMain" xml:space="preserve">
+    <value>Předehřev</value>
+  </data>
+  <data name="scrPreheatTxStateOff" xml:space="preserve">
+    <value>Předehřívání vypnuto</value>
+  </data>
+  <data name="scrPreheatTxStateOn" xml:space="preserve">
+    <value>Predehřívání zapnuto</value>
+  </data>
+  <data name="scrPrintInfoTx1" xml:space="preserve">
+    <value>Zvolený model:</value>
+  </data>
+  <data name="scrPrintInfoTx2" xml:space="preserve">
+    <value>Aktuální stav:</value>
+  </data>
+  <data name="scrPrintInfoTx3" xml:space="preserve">
+    <value>Teplota trysky:</value>
+  </data>
+  <data name="scrPrintInfoTx4" xml:space="preserve">
+    <value>Teplota podložky:</value>
+  </data>
+  <data name="scrPrintInfoTx5" xml:space="preserve">
+    <value>Teplota prostoru:</value>
+  </data>
+  <data name="scrPrintInfoTxMain" xml:space="preserve">
+    <value>Tisk modelu</value>
+  </data>
+  <data name="scrSettingAnotherBtLang" xml:space="preserve">
+    <value>Volba jazyka</value>
+  </data>
+  <data name="scrSettingAnotherBtState" xml:space="preserve">
+    <value>Stav tiskárny</value>
+  </data>
+  <data name="scrSettingAnotherBtTemper" xml:space="preserve">
+    <value>Nastavení teplot</value>
+  </data>
+  <data name="scrSettingAnotherTxMain" xml:space="preserve">
+    <value>Další nastavení</value>
+  </data>
+  <data name="scrSettingBtAnother" xml:space="preserve">
+    <value>Další nastavení</value>
+  </data>
+  <data name="scrSettingBtCalibration" xml:space="preserve">
+    <value>Kalibrace podložky</value>
+  </data>
+  <data name="scrSettingBtChange" xml:space="preserve">
+    <value>Výměna struny</value>
+  </data>
+  <data name="scrSettingBtPark" xml:space="preserve">
+    <value>Parkovací pozice</value>
+  </data>
+  <data name="scrSettingTempBed" xml:space="preserve">
+    <value>Podložka</value>
+  </data>
+  <data name="scrSettingTempNozzle" xml:space="preserve">
+    <value>Trysky</value>
+  </data>
+  <data name="scrSettingTempSpace" xml:space="preserve">
+    <value>Prostor</value>
+  </data>
+  <data name="scrSettingTempTxMain" xml:space="preserve">
+    <value>Nastavení teplot</value>
+  </data>
+  <data name="scrSettingTxMain" xml:space="preserve">
+    <value>Nastavení</value>
+  </data>
+  <data name="scrShutDownTx1" xml:space="preserve">
+    <value>Během několika sekund tiskárna</value>
+  </data>
+  <data name="scrShutDownTx2" xml:space="preserve">
+    <value>ukončí své programy.</value>
+  </data>
+  <data name="scrShutDownTx3" xml:space="preserve">
+    <value />
+  </data>
+  <data name="scrShutDownTx4" xml:space="preserve">
+    <value />
+  </data>
+  <data name="scrShutDownTx5" xml:space="preserve">
+    <value>Nyní ji vypněte hlavním vypínačem.</value>
+  </data>
+  <data name="scrShutDownTxMain" xml:space="preserve">
+    <value>Vypnutí</value>
+  </data>
+  <data name="scrStopTx1" xml:space="preserve">
+    <value>Opravdu si přejete zastavit tisk</value>
+  </data>
+  <data name="scrStopTx2" xml:space="preserve">
+    <value>modelu ? Pokračování této akce může</value>
+  </data>
+  <data name="scrStopTx3" xml:space="preserve">
+    <value>způsobit nedokončení modelu.</value>
+  </data>
+  <data name="scrStopTx4" xml:space="preserve">
+    <value />
+  </data>
+  <data name="scrStopTxMain" xml:space="preserve">
+    <value>Tisk modelu</value>
+  </data>
+  <data name="scrtInfoTxMain" xml:space="preserve">
+    <value>Informace</value>
+  </data>
+  <data name="srcInfoFirmware" xml:space="preserve">
+    <value>Firmware:</value>
+  </data>
+  <data name="srcInfoUrlWeb" xml:space="preserve">
+    <value>www.be3D.cz</value>
+  </data>
+  <data name="Text3DmodelFalse" xml:space="preserve">
+    <value>3D model není určen pro daný typ tiskárny</value>
+  </data>
+  <data name="TextBack" xml:space="preserve">
+    <value>Zpět</value>
+  </data>
+  <data name="TextContinue" xml:space="preserve">
+    <value>Pokračovat</value>
+  </data>
+  <data name="TextDataTransferMain" xml:space="preserve">
+    <value>Informace</value>
+  </data>
+  <data name="TextDataTransferText" xml:space="preserve">
+    <value>Nelze spustit tisk, přenáší se data na SD kartu</value>
+  </data>
+  <data name="TextDoorOpen" xml:space="preserve">
+    <value>Tiskárna má otevřené dveře...</value>
+  </data>
+  <data name="TextEnd" xml:space="preserve">
+    <value>Ukončit</value>
+  </data>
+  <data name="TextError" xml:space="preserve">
+    <value>Chyba</value>
+  </data>
+  <data name="TextErrorStopPrinting" xml:space="preserve">
+    <value>Tisk přerušen, otevřeny dveře nebo horní kryt.</value>
+  </data>
+  <data name="TextNext" xml:space="preserve">
+    <value>Další</value>
+  </data>
+  <data name="TextNo" xml:space="preserve">
+    <value>Ne</value>
+  </data>
+  <data name="TextNoMaterial" xml:space="preserve">
+    <value>V tiskárně chybý materiál.</value>
+  </data>
+  <data name="TextNoMaterialExtr1" xml:space="preserve">
+    <value>Došel materiál v trysce 1</value>
+  </data>
+  <data name="TextNoMaterialExtr2" xml:space="preserve">
+    <value>Došel materiál v trysce 2</value>
+  </data>
+  <data name="TextNoModelSelection" xml:space="preserve">
+    <value>Není vybrán žádný model...</value>
+  </data>
+  <data name="TextNoSDCard" xml:space="preserve">
+    <value>Nepodařilo se načíst SD kartu.</value>
+  </data>
+  <data name="TextNoSdLoad" xml:space="preserve">
+    <value>Nebyly nalezeny žádné modely.</value>
+  </data>
+  <data name="TextOk" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="TextOpenDoorOrCover" xml:space="preserve">
+    <value>Uzavřete dveře nebo horní kryt tiskárny.</value>
+  </data>
+  <data name="TextPause" xml:space="preserve">
+    <value>Pauza</value>
+  </data>
+  <data name="TextPrevious" xml:space="preserve">
+    <value>Předchozí</value>
+  </data>
+  <data name="TextRepeat" xml:space="preserve">
+    <value>Opakovat 5mm</value>
+  </data>
+  <data name="TextSDLoad" xml:space="preserve">
+    <value>Načítám...</value>
+  </data>
+  <data name="TextSocketFalseFilament" xml:space="preserve">
+    <value>Není vložen správný typ materiálu v</value>
+  </data>
+  <data name="TextSocketLittleFilament" xml:space="preserve">
+    <value>Není dostatek materiálu v</value>
+  </data>
+  <data name="TextStatePrintChangeString" xml:space="preserve">
+    <value>Výměna struny...</value>
+  </data>
+  <data name="TextStatePrintDone" xml:space="preserve">
+    <value>Dokončeno....</value>
+  </data>
+  <data name="TextStatePrintInit" xml:space="preserve">
+    <value>Příprava tisku...</value>
+  </data>
+  <data name="TextStatePrintPause" xml:space="preserve">
+    <value>Pauza...</value>
+  </data>
+  <data name="TextStatePrintPrint" xml:space="preserve">
+    <value>Tisk....</value>
+  </data>
+  <data name="TextStatePrintStop" xml:space="preserve">
+    <value>Stop...</value>
+  </data>
+  <data name="TextStop" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="TextTransferFile" xml:space="preserve">
+    <value>Probíhá přenos souboru do tiskárny.</value>
+  </data>
+  <data name="TextYes" xml:space="preserve">
+    <value>Ano</value>
+  </data>
+  <data name="scrLanguageTxMain" xml:space="preserve">
+    <value>Změna jazyka</value>
+  </data>
+  <data name="TextIgnore" xml:space="preserve">
+    <value>Ignorovat</value>
+  </data>
+  <data name="scrSettingAnotherBtOffset" xml:space="preserve">
+    <value>Nastavení offsetu</value>
+  </data>
+  <data name="scrSettingOffsetBtReload" xml:space="preserve">
+    <value>Reload</value>
+  </data>
+  <data name="scrSettingOffsetBtSave" xml:space="preserve">
+    <value>Uložit</value>
+  </data>
+  <data name="scrSettingOffsetInfo1" xml:space="preserve">
+    <value>Offset osy Z</value>
+  </data>
+  <data name="scrSettingOffsetTxMain" xml:space="preserve">
+    <value>ZMĚNA OFFSETU</value>
+  </data>
+  <data name="scrSettingAnotherBtUpdate" xml:space="preserve">
+    <value>Update firmware</value>
+  </data>
+  <data name="scrSettingAnotherBtTestAxis" xml:space="preserve">
+    <value>Test pojezdů</value>
+  </data>
+  <data name="TextStateUpsTraffic" xml:space="preserve">
+    <value>Nelze spustit tisk. Tiskárna běží na záložní zdroj.</value>
+  </data>
+  <data name="TextContinePrintingFromOffState" xml:space="preserve">
+    <value>Došlo k vypnutí pomocí UPS zdroje. Přejete si pokračovat v tisku?</value>
+  </data>
+  <data name="TextCorrectSaveParam" xml:space="preserve">
+    <value>Parametry tisku byly ulozeny.</value>
+  </data>
+  <data name="TextNoCorrectSaveParam" xml:space="preserve">
+    <value>Problém při uložení parametrů!</value>
+  </data>
+  <data name="TextFeedIn" xml:space="preserve">
+    <value>Zavést</value>
+  </data>
+  <data name="TextRemove" xml:space="preserve">
+    <value>Vyjmout</value>
+  </data>
+  <data name="TextErrorStopMove" xml:space="preserve">
+    <value>Pohyb přerušen, otevřeny dveře nebo horní kryt.</value>
+  </data>
+  <data name="TextCeilingOpen" xml:space="preserve">
+    <value>Tiskárna má otevřený horní kryt</value>
+  </data>
+  <data name="TextCancel" xml:space="preserve">
+    <value>Ukončit</value>
+  </data>
+  <data name="TextMotionTest" xml:space="preserve">
+    <value>Test pojezdů.</value>
+  </data>
+  <data name="TextPausePrint" xml:space="preserve">
+    <value>Zastavuji tisk-prosím čekejte.</value>
+  </data>
+  <data name="TextStartPrint" xml:space="preserve">
+    <value>Připravuji tisk.</value>
+  </data>
+  <data name="TextStopPrint" xml:space="preserve">
+    <value>Ukončení tisku-prosím čekejte.</value>
+  </data>
+  <data name="TextUpdateFW" xml:space="preserve">
+    <value>Update FW-Prosím čekejte.</value>
+  </data>
+  <data name="scrInfoTypeProduct" xml:space="preserve">
+    <value>Typ:</value>
+  </data>
+  <data name="scrCutEjectPrimaryFil" xml:space="preserve">
+    <value>Vysouvání primárního vlákna</value>
+  </data>
+  <data name="scrCutEjectSecondFil" xml:space="preserve">
+    <value>Vysouvání sekundárního vlákna</value>
+  </data>
+  <data name="scrCutExchangeDone" xml:space="preserve">
+    <value>Výměna dokončena</value>
+  </data>
+  <data name="scrCutFlowsFilFromNozzle" xml:space="preserve">
+    <value>Vytéká z trysky plast ?</value>
+  </data>
+  <data name="scrCutIncorectChangeFil" xml:space="preserve">
+    <value>Nedokočena výměna struny, prosím opakujte postup.</value>
+  </data>
+  <data name="scrCutInsertPrimaryFil" xml:space="preserve">
+    <value>Vložte primární vlákno a potvrďte</value>
+  </data>
+  <data name="scrCutInsertSecundFil" xml:space="preserve">
+    <value>Vložte primární vlákno a potvrďte</value>
+  </data>
+  <data name="scrCutPreparePrintHeating" xml:space="preserve">
+    <value>Příprava - nahřívání trysky</value>
+  </data>
+  <data name="TextFinish" xml:space="preserve">
+    <value>Dokončit</value>
+  </data>
+</root>

@@ -1,0 +1,537 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="scrCatGutChScr0Cat1" xml:space="preserve">
+    <value>Nozzle 1</value>
+  </data>
+  <data name="scrCatGutChScr0Cat2" xml:space="preserve">
+    <value>Nozzle 2</value>
+  </data>
+  <data name="scrCatGutChScr0Tx1" xml:space="preserve">
+    <value>Choose the nozzle for filament change</value>
+  </data>
+  <data name="scrCatGutChScr1Tx1" xml:space="preserve">
+    <value>Wait until the nozzle warms up</value>
+  </data>
+  <data name="scrCatGutChScr2Tx1" xml:space="preserve">
+    <value>Do you wish to remove the filament, or feed it in to the printer?</value>
+  </data>
+  <data name="scrCatGutChScr3Tx1" xml:space="preserve">
+    <value>The string is unloading, wait until the process is finished.</value>
+  </data>
+  <data name="scrCatGutChScr4Tx1" xml:space="preserve">
+    <value>Chose type of the filament</value>
+  </data>
+  <data name="scrCatGutChScr5Tx1" xml:space="preserve">
+    <value>The filament is loading, if necessary use the repeat button.</value>
+  </data>
+  <data name="scrCatGutChTxMain" xml:space="preserve">
+    <value>Filament change</value>
+  </data>
+  <data name="scrInfoNameCompany" xml:space="preserve">
+    <value>Manufacturer:</value>
+  </data>
+  <data name="scrInfoNameTraffic" xml:space="preserve">
+    <value>Overal run time:</value>
+  </data>
+  <data name="scrInfoNameProduct" xml:space="preserve">
+    <value>Product:</value>
+  </data>
+  <data name="scrInfoTrafficTime" xml:space="preserve">
+    <value />
+  </data>
+  <data name="scrMainBtInfo" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="scrMainBtPrint" xml:space="preserve">
+    <value>Print</value>
+  </data>
+  <data name="scrMainBtSetting" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="scrMaintBtShutDown" xml:space="preserve">
+    <value>Shutdown</value>
+  </data>
+  <data name="scrMainTxMain" xml:space="preserve">
+    <value>Main Menu</value>
+  </data>
+  <data name="scrModelBtPreheat" xml:space="preserve">
+    <value>Preheat</value>
+  </data>
+  <data name="scrModelBtPrint" xml:space="preserve">
+    <value>Print</value>
+  </data>
+  <data name="scrModelTxMain" xml:space="preserve">
+    <value>Model Selection</value>
+  </data>
+  <data name="scrPauseBtStop" xml:space="preserve">
+    <value>Terminate printing</value>
+  </data>
+  <data name="scrPauseTxInfo" xml:space="preserve">
+    <value>Print suspended</value>
+  </data>
+  <data name="scrPauseTxMain" xml:space="preserve">
+    <value>Pause</value>
+  </data>
+  <data name="scrPreheatBtOff" xml:space="preserve">
+    <value>Turn OFF preheat</value>
+  </data>
+  <data name="scrPreheatBtOn" xml:space="preserve">
+    <value>Turn ON preheat</value>
+  </data>
+  <data name="scrPreheatTx1" xml:space="preserve">
+    <value>Nozzle 1 temp:</value>
+  </data>
+  <data name="scrPreheatTx2" xml:space="preserve">
+    <value>Nozzle 2 temp:</value>
+  </data>
+  <data name="scrPreheatTx4" xml:space="preserve">
+    <value>Selected</value>
+  </data>
+  <data name="scrPreheatTx5" xml:space="preserve">
+    <value>Current</value>
+  </data>
+  <data name="scrPreheatTx6" xml:space="preserve">
+    <value>Bed temp</value>
+  </data>
+  <data name="scrPreheatTx7" xml:space="preserve">
+    <value>Chamber temp</value>
+  </data>
+  <data name="scrPreheatTxMain" xml:space="preserve">
+    <value>Preheat</value>
+  </data>
+  <data name="scrPreheatTxStateOff" xml:space="preserve">
+    <value>Preheat OFF</value>
+  </data>
+  <data name="scrPreheatTxStateOn" xml:space="preserve">
+    <value>Preheat ON</value>
+  </data>
+  <data name="scrPrintInfoTx1" xml:space="preserve">
+    <value>Selected model:</value>
+  </data>
+  <data name="scrPrintInfoTx2" xml:space="preserve">
+    <value>Current status:</value>
+  </data>
+  <data name="scrPrintInfoTx3" xml:space="preserve">
+    <value>Nozzle temp:</value>
+  </data>
+  <data name="scrPrintInfoTx4" xml:space="preserve">
+    <value>Bed temp:</value>
+  </data>
+  <data name="scrPrintInfoTx5" xml:space="preserve">
+    <value>Chamber temp:</value>
+  </data>
+  <data name="scrPrintInfoTxMain" xml:space="preserve">
+    <value>Model printing</value>
+  </data>
+  <data name="scrSettingAnotherBtLang" xml:space="preserve">
+    <value>Language selection</value>
+  </data>
+  <data name="scrSettingAnotherBtState" xml:space="preserve">
+    <value>Printer status</value>
+  </data>
+  <data name="scrSettingAnotherBtTemper" xml:space="preserve">
+    <value>Temperature settings</value>
+  </data>
+  <data name="scrSettingAnotherTxMain" xml:space="preserve">
+    <value>Other settings</value>
+  </data>
+  <data name="scrSettingBtAnother" xml:space="preserve">
+    <value>Other settings</value>
+  </data>
+  <data name="scrSettingBtCalibration" xml:space="preserve">
+    <value>Bed calibration</value>
+  </data>
+  <data name="scrSettingBtChange" xml:space="preserve">
+    <value>Filament change</value>
+  </data>
+  <data name="scrSettingBtPark" xml:space="preserve">
+    <value>Parking position</value>
+  </data>
+  <data name="scrSettingTempBed" xml:space="preserve">
+    <value>Bed</value>
+  </data>
+  <data name="scrSettingTempNozzle" xml:space="preserve">
+    <value>Nozzles</value>
+  </data>
+  <data name="scrSettingTempSpace" xml:space="preserve">
+    <value>Chamber</value>
+  </data>
+  <data name="scrSettingTempTxMain" xml:space="preserve">
+    <value>Temperature settings</value>
+  </data>
+  <data name="scrSettingTxMain" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="scrShutDownTx1" xml:space="preserve">
+    <value>Within a few seconds, the printer</value>
+  </data>
+  <data name="scrShutDownTx2" xml:space="preserve">
+    <value>terminates its programs.</value>
+  </data>
+  <data name="scrShutDownTx3" xml:space="preserve">
+    <value />
+  </data>
+  <data name="scrShutDownTx4" xml:space="preserve">
+    <value />
+  </data>
+  <data name="scrShutDownTx5" xml:space="preserve">
+    <value>Please, turn the main switch off.</value>
+  </data>
+  <data name="scrShutDownTxMain" xml:space="preserve">
+    <value>Shutdown</value>
+  </data>
+  <data name="scrStopTx1" xml:space="preserve">
+    <value>Are you sure to stop model printing?</value>
+  </data>
+  <data name="scrStopTx2" xml:space="preserve">
+    <value>This may cause model incompleteness.</value>
+  </data>
+  <data name="scrStopTx3" xml:space="preserve">
+    <value />
+  </data>
+  <data name="scrStopTx4" xml:space="preserve">
+    <value />
+  </data>
+  <data name="scrStopTxMain" xml:space="preserve">
+    <value>Print model</value>
+  </data>
+  <data name="scrtInfoTxMain" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="srcInfoFirmware" xml:space="preserve">
+    <value>Firmware:</value>
+  </data>
+  <data name="srcInfoUrlWeb" xml:space="preserve">
+    <value>www.be3D.cz</value>
+  </data>
+  <data name="Text3DmodelFalse" xml:space="preserve">
+    <value>3D model is not compatible</value>
+  </data>
+  <data name="TextBack" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="TextContinue" xml:space="preserve">
+    <value>Continue</value>
+  </data>
+  <data name="TextDataTransferMain" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="TextDataTransferText" xml:space="preserve">
+    <value>Can not start printing. Transfering data to SD card.</value>
+  </data>
+  <data name="TextDoorOpen" xml:space="preserve">
+    <value>The door is open.</value>
+  </data>
+  <data name="TextEnd" xml:space="preserve">
+    <value>End</value>
+  </data>
+  <data name="TextError" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="TextErrorStopPrinting" xml:space="preserve">
+    <value>Print is canceled, top cover or door  is opened.</value>
+  </data>
+  <data name="TextNext" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="TextNo" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="TextNoMaterial" xml:space="preserve">
+    <value>No filament in printer.</value>
+  </data>
+  <data name="TextNoMaterialExtr1" xml:space="preserve">
+    <value>Not enough filament in nozzle 1</value>
+  </data>
+  <data name="TextNoMaterialExtr2" xml:space="preserve">
+    <value>Not enough filament in nozzle 2</value>
+  </data>
+  <data name="TextNoModelSelection" xml:space="preserve">
+    <value>No model selected...</value>
+  </data>
+  <data name="TextNoSDCard" xml:space="preserve">
+    <value>Unable to load the SD card...</value>
+  </data>
+  <data name="TextNoSdLoad" xml:space="preserve">
+    <value>None model found...</value>
+  </data>
+  <data name="TextOk" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="TextOpenDoorOrCover" xml:space="preserve">
+    <value>Close the door or top cover...</value>
+  </data>
+  <data name="TextPause" xml:space="preserve">
+    <value>Pause</value>
+  </data>
+  <data name="TextPrevious" xml:space="preserve">
+    <value>Previous</value>
+  </data>
+  <data name="TextRepeat" xml:space="preserve">
+    <value>Repeat 5mm</value>
+  </data>
+  <data name="TextSDLoad" xml:space="preserve">
+    <value>Loading...</value>
+  </data>
+  <data name="TextSocketFalseFilament" xml:space="preserve">
+    <value>Wrong filament type in</value>
+  </data>
+  <data name="TextSocketLittleFilament" xml:space="preserve">
+    <value>Not enough filament in</value>
+  </data>
+  <data name="TextStatePrintChangeString" xml:space="preserve">
+    <value>Filament change...</value>
+  </data>
+  <data name="TextStatePrintDone" xml:space="preserve">
+    <value>Done...</value>
+  </data>
+  <data name="TextStatePrintInit" xml:space="preserve">
+    <value>Init print...</value>
+  </data>
+  <data name="TextStatePrintPause" xml:space="preserve">
+    <value>Pause...</value>
+  </data>
+  <data name="TextStatePrintPrint" xml:space="preserve">
+    <value>Printing...</value>
+  </data>
+  <data name="TextStatePrintStop" xml:space="preserve">
+    <value>Stop...</value>
+  </data>
+  <data name="TextStop" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="TextTransferFile" xml:space="preserve">
+    <value>File transfer in progress.</value>
+  </data>
+  <data name="TextYes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="scrLanguageTxMain" xml:space="preserve">
+    <value>Language selection</value>
+  </data>
+  <data name="TextIgnore" xml:space="preserve">
+    <value>Ignore</value>
+  </data>
+  <data name="scrSettingAnotherBtOffset" xml:space="preserve">
+    <value>Set offset</value>
+  </data>
+  <data name="scrSettingOffsetBtReload" xml:space="preserve">
+    <value>Reload</value>
+  </data>
+  <data name="scrSettingOffsetBtSave" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="scrSettingOffsetInfo1" xml:space="preserve">
+    <value>Offset axis Z</value>
+  </data>
+  <data name="scrSettingOffsetTxMain" xml:space="preserve">
+    <value>CHANGE OFFSET</value>
+  </data>
+  <data name="scrSettingAnotherBtUpdate" xml:space="preserve">
+    <value>Update firmware</value>
+  </data>
+  <data name="scrUpdateFwTxInfoFilesNoCompatible" xml:space="preserve">
+    <value>Files are not compatible.</value>
+  </data>
+  <data name="scrUpdateFwTxInfoInputSD" xml:space="preserve">
+    <value>Insert SD card with update files</value>
+  </data>
+  <data name="scrUpdateFwTxInfoNoUpdate" xml:space="preserve">
+    <value>Update is not work.</value>
+  </data>
+  <data name="scrUpdateFwTxMain" xml:space="preserve">
+    <value>Update firmware</value>
+  </data>
+  <data name="scrSettingAnotherBtTestAxis" xml:space="preserve">
+    <value>Motion test</value>
+  </data>
+  <data name="TextStateUpsTraffic" xml:space="preserve">
+    <value>The print task cannot be initialised because the printer is running on backup power source.</value>
+  </data>
+  <data name="TextContinePrintingFromOffState" xml:space="preserve">
+    <value>The printer was power down useful UPS. Would you like to continue ?</value>
+  </data>
+  <data name="TextCorrectSaveParam" xml:space="preserve">
+    <value>The parametrs of print were save.</value>
+  </data>
+  <data name="TextNoCorrectSaveParam" xml:space="preserve">
+    <value>Problem with save parameters of print!</value>
+  </data>
+  <data name="TextFeedIn" xml:space="preserve">
+    <value>Feed in</value>
+  </data>
+  <data name="TextRemove" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="TextErrorStopMove" xml:space="preserve">
+    <value>Motion is canceled, top cover or door is opened.</value>
+  </data>
+  <data name="TextCeilingOpen" xml:space="preserve">
+    <value>The top cover is open.</value>
+  </data>
+  <data name="TextCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="TextMotionTest" xml:space="preserve">
+    <value>Motion test.</value>
+  </data>
+  <data name="TextPausePrint" xml:space="preserve">
+    <value>Pausing print-Please wait.</value>
+  </data>
+  <data name="TextStartPrint" xml:space="preserve">
+    <value>Preparing print.</value>
+  </data>
+  <data name="TextStopPrint" xml:space="preserve">
+    <value>Terminating print-Please wait.</value>
+  </data>
+  <data name="TextUpdateFW" xml:space="preserve">
+    <value>Updating FW-Please wait.</value>
+  </data>
+  <data name="scrInfoTypeProduct" xml:space="preserve">
+    <value>Type:</value>
+  </data>
+  <data name="scrCutEjectPrimaryFil" xml:space="preserve">
+    <value>Feed out primary filament</value>
+  </data>
+  <data name="scrCutEjectSecondFil" xml:space="preserve">
+    <value>Feed out secondary filament</value>
+  </data>
+  <data name="scrCutExchangeDone" xml:space="preserve">
+    <value>Exchange filament done</value>
+  </data>
+  <data name="scrCutFlowsFilFromNozzle" xml:space="preserve">
+    <value>Does filament flow out from nozzle ?</value>
+  </data>
+  <data name="scrCutIncorectChangeFil" xml:space="preserve">
+    <value>Unfinished exchange filament. Please repeat change filament.</value>
+  </data>
+  <data name="scrCutInsertPrimaryFil" xml:space="preserve">
+    <value>Insert primary filament</value>
+  </data>
+  <data name="scrCutInsertSecundFil" xml:space="preserve">
+    <value>Insert secondary filament</value>
+  </data>
+  <data name="scrCutPreparePrintHeating" xml:space="preserve">
+    <value>Preparing - heating nozzle</value>
+  </data>
+  <data name="TextFinish" xml:space="preserve">
+    <value>Finish</value>
+  </data>
+</root>

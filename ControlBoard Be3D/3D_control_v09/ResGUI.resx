@@ -1,0 +1,437 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="logo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\logo1.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WinCutChange" xml:space="preserve">
+    <value>&lt;Glide Version="1.0.7"&gt;
+  &lt;Window Name="instance115" Width="320" Height="240" BackColor="FFFFFF"&gt;
+    &lt;TextBlock Name="text_main" X="50" Y="10" Width="220" Height="30" Alpha="255" Text="Vymena struny" TextAlign="Center" TextVerticalAlign="Top" Font="6" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;Button Name="btn_end" X="10" Y="198" Width="120" Height="32" Alpha="255" Text="Ukoncit vymenu" Font="4" FontColor="000000" DisabledFontColor="808080" TintColor="000000" TintAmount="0"/&gt;
+    &lt;Button Name="btn_continue" X="190" Y="198" Width="120" Height="32" Alpha="255" Text="Pokracovat" Font="4" FontColor="000000" DisabledFontColor="808080" TintColor="000000" TintAmount="0"/&gt;
+    &lt;RadioButton Name="rdb_catgut1" X="10" Y="80" Width="32" Height="32" Alpha="255" Value="" Checked="True" GroupName="radioButtonGroup" ShowBackground="True" Color="d4d4d4" OutlineColor="b8b8b8" SelectedColor="358bf6" SelectedOutlineColor="002dff"/&gt;
+    &lt;RadioButton Name="rdb_catgut2" X="10" Y="120" Width="32" Height="32" Alpha="255" Value="" Checked="False" GroupName="radioButtonGroup" ShowBackground="True" Color="d4d4d4" OutlineColor="b8b8b8" SelectedColor="358bf6" SelectedOutlineColor="002dff"/&gt;
+    &lt;TextBlock Name="text_info" X="10" Y="35" Width="300" Height="60" Alpha="255" Text="--" TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="text_catgut1" X="50" Y="80" Width="100" Height="32" Alpha="255" Text="ABS" TextAlign="Left" TextVerticalAlign="Middle" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="text_catgut2" X="50" Y="120" Width="100" Height="32" Alpha="255" Text="PLA" TextAlign="Left" TextVerticalAlign="Middle" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;ProgressBar Name="progressBar" X="21" Y="100" Width="283" Height="25" Alpha="255" Direction="Right" MaxValue="100" Value="0"/&gt;
+    &lt;Button Name="btn_repeat" X="189" Y="154" Width="120" Height="32" Alpha="255" Text="Opakovat" Font="4" FontColor="000000" DisabledFontColor="808080" TintColor="000000" TintAmount="0"/&gt;
+  &lt;/Window&gt;
+&lt;/Glide&gt;</value>
+  </data>
+  <data name="WinError" xml:space="preserve">
+    <value>&lt;Glide Version="1.0.7"&gt;
+  &lt;Window Name="instance115" Width="320" Height="240" BackColor="FFFFFF"&gt;
+    &lt;TextBlock Name="text_main" X="10" Y="10" Width="300" Height="30" Alpha="255" Text="--" TextAlign="Center" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="text_info1" X="10" Y="40" Width="300" Height="32" Alpha="255" Text="..." TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;Button Name="btn_continue" X="190" Y="198" Width="120" Height="32" Alpha="255" Text="Pokračovat" Font="4" FontColor="000000" DisabledFontColor="808080" TintColor="000000" TintAmount="0"/&gt;
+    &lt;TextBlock Name="text_info2" X="10" Y="70" Width="300" Height="32" Alpha="255" Text="..." TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="text_info3" X="10" Y="100" Width="300" Height="32" Alpha="255" Text="..." TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="text_info4" X="10" Y="130" Width="300" Height="32" Alpha="255" Text="..." TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+  &lt;/Window&gt;
+&lt;/Glide&gt;</value>
+  </data>
+  <data name="WinInfo" xml:space="preserve">
+    <value>&lt;Glide Version="1.0.7"&gt;
+  &lt;Window Name="instance115" Width="320" Height="240" BackColor="FFFFFF"&gt;
+    &lt;TextBlock Name="text_main" X="90" Y="10" Width="220" Height="30" Alpha="255" Text="INFORMACE" TextAlign="Center" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;Button Name="btn_back" X="5" Y="10" Width="80" Height="32" Alpha="255" Text="Zpět" Font="4" FontColor="000000" DisabledFontColor="808080" TintColor="000000" TintAmount="0"/&gt;
+    &lt;TextBlock Name="text_nameCompany" X="15" Y="50" Width="120" Height="32" Alpha="255" Text="Vyrobce:" TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="text_nameProduct" X="15" Y="70" Width="120" Height="32" Alpha="255" Text="Nazev" TextAlign="left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="text_nameTrafficTime" X="15" Y="110" Width="200" Height="32" Alpha="255" Text="Provozní čas :" TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="text_firmware" X="5" Y="208" Width="200" Height="32" Alpha="255" Text="Firmware: 1.0.0" TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="text_urlWeb" X="203" Y="208" Width="105" Height="32" Alpha="255" Text="www.be3D.cz" TextAlign="right" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="text_trafficTime" X="110" Y="110" Width="200" Height="32" Alpha="255" Text="2000:45 h" TextAlign="right" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="text_company" X="110" Y="50" Width="200" Height="32" Alpha="255" Text="--" TextAlign="right" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="text_valueNameProduct" X="110" Y="70" Width="200" Height="32" Alpha="255" Text="--" TextAlign="right" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="text_typeProduct" X="15" Y="90" Width="100" Height="32" Alpha="255" Text="Typ" TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="text_valueTypeProduct" X="110" Y="90" Width="200" Height="32" Alpha="255" Text="--" TextAlign="right" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+  &lt;/Window&gt;
+&lt;/Glide&gt;</value>
+  </data>
+  <data name="WinMain" xml:space="preserve">
+    <value>&lt;Glide Version="1.0.7"&gt;
+  &lt;Window Name="instance115" Width="320" Height="240" BackColor="FFFFFF"&gt;
+    &lt;TextBlock Name="text_main" X="10" Y="10" Width="300" Height="30" Alpha="255" Text="Hlavní menu" TextAlign="Center" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;Button Name="btn_print" X="60" Y="45" Width="200" Height="35" Alpha="255" Text="Tisk" Font="4" FontColor="000000" DisabledFontColor="808080" TintColor="000000" TintAmount="0"/&gt;
+    &lt;Button Name="btn_settings" X="60" Y="95" Width="200" Height="35" Alpha="255" Text="Nastavení" Font="4" FontColor="000000" DisabledFontColor="808080" TintColor="000000" TintAmount="0"/&gt;
+    &lt;Button Name="btn_information" X="60" Y="145" Width="200" Height="35" Alpha="255" Text="Informace" Font="4" FontColor="000000" DisabledFontColor="808080" TintColor="000000" TintAmount="0"/&gt;
+    &lt;Button Name="btn_shutdown" X="60" Y="195" Width="200" Height="35" Alpha="255" Text="Vypnutí" Font="4" FontColor="000000" DisabledFontColor="808080" TintColor="000000" TintAmount="0"/&gt;
+  &lt;/Window&gt;
+&lt;/Glide&gt;</value>
+  </data>
+  <data name="WinModel" xml:space="preserve">
+    <value>&lt;Glide Version="1.0.7"&gt;
+  &lt;Window Name="instance115" Width="320" Height="240" BackColor="FFFFFF"&gt;
+    &lt;TextBlock Name="text_main" X="90" Y="10" Width="220" Height="30" Alpha="255" Text="VYBER MODELU" TextAlign="Center" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;Button Name="btn_back" X="5" Y="10" Width="80" Height="32" Alpha="255" Text="Zpet" Font="4" FontColor="000000" DisabledFontColor="808080" TintColor="000000" TintAmount="0"/&gt;
+    &lt;Button Name="btn_preheat" X="10" Y="198" Width="120" Height="35" Alpha="255" Text="Predehrev" Font="4" FontColor="000000" DisabledFontColor="808080" TintColor="000000" TintAmount="0"/&gt;
+    &lt;Button Name="btn_print" X="190" Y="198" Width="120" Height="35" Alpha="255" Text="Tisk" Font="4" FontColor="000000" DisabledFontColor="808080" TintColor="000000" TintAmount="0"/&gt;
+    &lt;Button Name="btn_prev" X="20" Y="160" Width="100" Height="32" Alpha="255" Text="Predchozi" Font="4" FontColor="000000" DisabledFontColor="808080" TintColor="000000" TintAmount="0"/&gt;
+    &lt;RadioButton Name="rdb_file1" X="25" Y="44" Width="32" Height="32" Alpha="255" Value="" Checked="False" GroupName="radioButtonGroup" ShowBackground="True" Color="d4d4d4" OutlineColor="b8b8b8" SelectedColor="358bf6" SelectedOutlineColor="002dff"/&gt;
+    &lt;RadioButton Name="rdb_file2" X="25" Y="83" Width="32" Height="32" Alpha="255" Value="" Checked="False" GroupName="radioButtonGroup" ShowBackground="True" Color="d4d4d4" OutlineColor="b8b8b8" SelectedColor="358bf6" SelectedOutlineColor="002dff"/&gt;
+    &lt;RadioButton Name="rdb_file3" X="25" Y="123" Width="32" Height="32" Alpha="255" Value="" Checked="False" GroupName="radioButtonGroup" ShowBackground="True" Color="d4d4d4" OutlineColor="b8b8b8" SelectedColor="358bf6" SelectedOutlineColor="002dff"/&gt;
+    &lt;Button Name="btn_next" X="200" Y="160" Width="100" Height="32" Alpha="255" Text="Dalsi" Font="4" FontColor="000000" DisabledFontColor="808080" TintColor="000000" TintAmount="0"/&gt;
+    &lt;TextBlock Name="text_file1" X="65" Y="44" Width="240" Height="32" Alpha="255" Text="--" TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="text_file2" X="65" Y="83" Width="240" Height="32" Alpha="255" Text="--" TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="text_file3" X="65" Y="120" Width="240" Height="32" Alpha="255" Text="--" TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="textBox_infoSD" X="10" Y="83" Width="300" Height="35" Alpha="255" Text="SD" TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+  &lt;/Window&gt;
+&lt;/Glide&gt;</value>
+  </data>
+  <data name="WinPausePrint" xml:space="preserve">
+    <value>&lt;Glide Version="1.0.7"&gt;
+  &lt;Window Name="instance115" Width="320" Height="240" BackColor="FFFFFF"&gt;
+    &lt;TextBlock Name="text_main" X="10" Y="10" Width="300" Height="30" Alpha="255" Text="TISK MODELU POZASTAVEN" TextAlign="Center" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;Button Name="btn_stop" X="10" Y="188" Width="95" Height="35" Alpha="255" Text="Ukoncit tisk" Font="4" FontColor="000000" DisabledFontColor="808080" TintColor="000000" TintAmount="0"/&gt;
+    &lt;Button Name="btn_continue" X="215" Y="188" Width="95" Height="35" Alpha="255" Text="Pokracovat" Font="4" FontColor="000000" DisabledFontColor="808080" TintColor="000000" TintAmount="0"/&gt;
+    &lt;TextBlock Name="text_info" X="10" Y="40" Width="300" Height="130" Alpha="255" Text="--" TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;Button Name="btn_changeString" X="110" Y="188" Width="100" Height="35" Alpha="255" Text="Výměna struny" Font="4" FontColor="000000" DisabledFontColor="808080" TintColor="000000" TintAmount="0"/&gt;
+  &lt;/Window&gt;
+&lt;/Glide&gt;</value>
+  </data>
+  <data name="WinPreheater" xml:space="preserve">
+    <value>&lt;Glide Version="1.0.7"&gt;
+  &lt;Window Name="instance115" Width="320" Height="240" BackColor="FFFFFF"&gt;
+    &lt;TextBlock Name="text_main" X="90" Y="10" Width="220" Height="30" Alpha="255" Text="Predehrivani" TextAlign="Center" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;Button Name="btn_back" X="5" Y="10" Width="80" Height="32" Alpha="255" Text="Zpet" Font="4" FontColor="000000" DisabledFontColor="808080" TintColor="000000" TintAmount="0"/&gt;
+    &lt;Button Name="btn_preheat" X="60" Y="195" Width="200" Height="32" Alpha="255" Text="Stop" Font="4" FontColor="000000" DisabledFontColor="808080" TintColor="000000" TintAmount="0"/&gt;
+    &lt;TextBlock Name="text_info1" X="15" Y="55" Width="150" Height="25" Alpha="255" Text="Teplota trysky 1:" TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="text_info2" X="15" Y="80" Width="150" Height="30" Alpha="255" Text="Teplota trysky 2:" TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="text_info3" X="15" Y="160" Width="290" Height="32" Alpha="255" Text="Predehrivani vypnuto" TextAlign="Center" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="text_tempext1_set" X="155" Y="55" Width="70" Height="25" Alpha="255" Text="--" TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="text_tempext2_set" X="155" Y="80" Width="70" Height="25" Alpha="255" Text="--" TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="text_info4" X="155" Y="33" Width="85" Height="32" Alpha="255" Text="Nastavena" TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="text_info5" X="245" Y="33" Width="70" Height="32" Alpha="255" Text="Aktualni" TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="text_tempext1_act" X="245" Y="55" Width="70" Height="25" Alpha="255" Text="--" TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="text_tempext2_act" X="245" Y="80" Width="70" Height="25" Alpha="255" Text="--" TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="text_info6" X="15" Y="105" Width="150" Height="32" Alpha="255" Text="Teplota podložky :" TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="text_info7" X="15" Y="130" Width="150" Height="32" Alpha="255" Text="Teplota prostoru :" TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="text_tempbed_set" X="155" Y="105" Width="70" Height="25" Alpha="255" Text="--" TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="text_tempbed_act" X="245" Y="105" Width="70" Height="25" Alpha="255" Text="--" TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="text_tempspace_set" X="155" Y="130" Width="70" Height="25" Alpha="255" Text="--" TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="text_tempspace_act" X="245" Y="130" Width="70" Height="25" Alpha="255" Text="--" TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+   
+  &lt;/Window&gt;
+&lt;/Glide&gt;</value>
+  </data>
+  <data name="WinPrintInfo" xml:space="preserve">
+    <value>&lt;Glide Version="1.0.7"&gt;
+  &lt;Window Name="instance115" Width="320" Height="240" BackColor="FFFFFF"&gt;
+    &lt;TextBlock Name="text_main" X="0" Y="10" Width="320" Height="30" Alpha="255" Text="TISK MODELU" TextAlign="Center" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;Button Name="btn_stop" X="10" Y="198" Width="120" Height="32" Alpha="255" Text="Stop" Font="4" FontColor="000000" DisabledFontColor="808080" TintColor="000000" TintAmount="0"/&gt;
+    &lt;Button Name="btn_pause" X="190" Y="198" Width="120" Height="32" Alpha="255" Text="Pauza" Font="4" FontColor="000000" DisabledFontColor="808080" TintColor="000000" TintAmount="0"/&gt;
+    &lt;TextBlock Name="text_info1" X="15" Y="35" Width="150" Height="30" Alpha="255" Text="Zvoleny model:" TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="text_info2" X="15" Y="60" Width="150" Height="25" Alpha="255" Text="Aktualni stav:" TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;ProgressBar Name="progress" X="15" Y="87" Width="290" Height="28" Alpha="255" Direction="Right" MaxValue="100" Value="0"/&gt;
+    &lt;TextBlock Name="text_info3" X="15" Y="120" Width="130" Height="32" Alpha="255" Text="Teplota trysky:" TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="text_info4" X="15" Y="142" Width="160" Height="32" Alpha="255" Text="Teplota podlozky:" TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="text_model" X="170" Y="35" Width="140" Height="30" Alpha="255" Text="--" TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="text_state" X="170" Y="60" Width="140" Height="25" Alpha="255" Text="--" TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="text_tempext1" X="175" Y="120" Width="50" Height="30" Alpha="255" Text="--" TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="text_tempbed" X="175" Y="142" Width="50" Height="30" Alpha="255" Text="--" TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="text_info6" X="145" Y="120" Width="35" Height="32" Alpha="255" Text="1:" TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="text_info7" X="225" Y="120" Width="35" Height="32" Alpha="255" Text="2:" TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="text_tempext2" X="260" Y="119" Width="50" Height="30" Alpha="255" Text="--" TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="text_info5" X="14" Y="165" Width="160" Height="32" Alpha="255" Text="Teplota prostoru:" TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="text_tempspace" X="175" Y="165" Width="50" Height="30" Alpha="255" Text="--" TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+  &lt;/Window&gt;
+&lt;/Glide&gt;</value>
+  </data>
+  <data name="WinSettings" xml:space="preserve">
+    <value>&lt;Glide Version="1.0.7"&gt;
+  &lt;Window Name="instance115" Width="320" Height="240" BackColor="FFFFFF"&gt;
+    &lt;TextBlock Name="text_main" X="90" Y="10" Width="220" Height="30" Alpha="255" Text="NASTAVENI" TextAlign="Center" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;Button Name="btn_back" X="5" Y="10" Width="80" Height="32" Alpha="255" Text="Zpet" Font="4" FontColor="000000" DisabledFontColor="808080" TintColor="000000" TintAmount="0"/&gt;
+    &lt;Button Name="btn_change" X="70" Y="45" Width="180" Height="35" Alpha="255" Text="Vymena struny" Font="4" FontColor="000000" DisabledFontColor="808080" TintColor="000000" TintAmount="0"/&gt;
+    &lt;Button Name="btn_park" X="70" Y="90" Width="180" Height="35" Alpha="255" Text="Parkovaci pozice" Font="4" FontColor="000000" DisabledFontColor="808080" TintColor="000000" TintAmount="0"/&gt;
+    &lt;Button Name="btn_another" X="70" Y="195" Width="180" Height="35" Alpha="255" Text="Dalsi nastaveni" Font="4" FontColor="000000" DisabledFontColor="808080" TintColor="000000" TintAmount="0"/&gt;
+  &lt;/Window&gt;
+&lt;/Glide&gt;</value>
+  </data>
+  <data name="WinSettingsAnother" xml:space="preserve">
+    <value>&lt;Glide Version="1.0.7"&gt;
+  &lt;Window Name="instance115" Width="320" Height="240" BackColor="FFFFFF"&gt;
+    &lt;TextBlock Name="text_main" X="90" Y="10" Width="220" Height="30" Alpha="255" Text="DALSI NASTAVENI" TextAlign="Center" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;Button Name="btn_back" X="5" Y="10" Width="80" Height="32" Alpha="255" Text="Zpet" Font="4" FontColor="000000" DisabledFontColor="808080" TintColor="000000" TintAmount="0"/&gt;
+    &lt;Button Name="btn_temperature" X="70" Y="50" Width="180" Height="35" Alpha="255" Text="Nastaveni teplot" Font="4" FontColor="000000" DisabledFontColor="808080" TintColor="000000" TintAmount="0"/&gt;
+    &lt;Button Name="btn_language" X="69" Y="95" Width="180" Height="35" Alpha="255" Text="Volba jazyka" Font="4" FontColor="000000" DisabledFontColor="808080" TintColor="000000" TintAmount="0"/&gt;
+    &lt;Button Name="btn_Offset" X="70" Y="140" Width="180" Height="35" Alpha="255" Text="Nastaveni offsetu" Font="4" FontColor="000000" DisabledFontColor="808080" TintColor="000000" TintAmount="0"/&gt;
+    &lt;Button Name="btn_testaxis" X="70" Y="190" Width="180" Height="35" Alpha="255" Text="Test pojezdu" Font="4" FontColor="000000" DisabledFontColor="808080" TintColor="000000" TintAmount="0"/&gt;
+  &lt;/Window&gt;
+&lt;/Glide&gt;</value>
+  </data>
+  <data name="WinSettingsTemp" xml:space="preserve">
+    <value>&lt;Glide Version="1.0.7"&gt;
+  &lt;Window Name="instance115" Width="320" Height="240" BackColor="FFFFFF"&gt;
+    &lt;TextBlock Name="text_main" X="90" Y="10" Width="220" Height="30" Alpha="255" Text="NASTAVENI TEPLOT" TextAlign="Center" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;Button Name="btn_back" X="5" Y="10" Width="80" Height="32" Alpha="255" Text="Zpet" Font="4" FontColor="000000" DisabledFontColor="808080" TintColor="000000" TintAmount="0"/&gt;
+    &lt;TextBlock Name="text_info_nozzle" X="20" Y="40" Width="70" Height="32" Alpha="255" Text="Tryska" TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="text_info_bed" X="115" Y="40" Width="70" Height="32" Alpha="255" Text="Podlozka" TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;RadioButton Name="rdb_ext1" X="25" Y="70" Width="32" Height="32" Alpha="255" Value="" Checked="False" GroupName="radioButtonGroup" ShowBackground="True" Color="d4d4d4" OutlineColor="b8b8b8" SelectedColor="358bf6" SelectedOutlineColor="002dff"/&gt;
+    &lt;RadioButton Name="rdb_ext2" X="25" Y="125" Width="32" Height="32" Alpha="255" Value="" Checked="False" GroupName="radioButtonGroup" ShowBackground="True" Color="d4d4d4" OutlineColor="b8b8b8" SelectedColor="358bf6" SelectedOutlineColor="002dff"/&gt;
+    &lt;RadioButton Name="rdb_ext3" X="25" Y="180" Width="32" Height="32" Alpha="255" Value="" Checked="False" GroupName="radioButtonGroup" ShowBackground="True" Color="d4d4d4" OutlineColor="b8b8b8" SelectedColor="358bf6" SelectedOutlineColor="002dff"/&gt;
+    &lt;TextBlock Name="text_info3" X="60" Y="70" Width="60" Height="32" Alpha="255" Text="150" TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="text_info4" X="60" Y="125" Width="60" Height="32" Alpha="255" Text="180" TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="text_info5" X="60" Y="180" Width="60" Height="32" Alpha="255" Text="220" TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;RadioButton Name="rdb_bed1" X="120" Y="70" Width="32" Height="32" Alpha="255" Value="" Checked="False" GroupName="radioButtonGroup1" ShowBackground="True" Color="d4d4d4" OutlineColor="b8b8b8" SelectedColor="358bf6" SelectedOutlineColor="002dff"/&gt;
+    &lt;RadioButton Name="rdb_bed2" X="120" Y="125" Width="32" Height="32" Alpha="255" Value="" Checked="False" GroupName="radioButtonGroup1" ShowBackground="True" Color="d4d4d4" OutlineColor="b8b8b8" SelectedColor="358bf6" SelectedOutlineColor="002dff"/&gt;
+    &lt;RadioButton Name="rdb_bed3" X="120" Y="180" Width="32" Height="32" Alpha="255" Value="" Checked="False" GroupName="radioButtonGroup1" ShowBackground="True" Color="d4d4d4" OutlineColor="b8b8b8" SelectedColor="358bf6" SelectedOutlineColor="002dff"/&gt;
+    &lt;TextBlock Name="text_info6" X="155" Y="72" Width="60" Height="32" Alpha="255" Text="40" TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="text_info7" X="155" Y="125" Width="60" Height="32" Alpha="255" Text="60" TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="text_info8" X="155" Y="180" Width="60" Height="32" Alpha="255" Text="80" TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="text_info_space" X="220" Y="40" Width="70" Height="32" Alpha="255" Text="Prostor" TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;RadioButton Name="rdb_space1" X="225" Y="70" Width="32" Height="32" Alpha="255" Value="" Checked="False" GroupName="radioButtonGroup2" ShowBackground="True" Color="d4d4d4" OutlineColor="b8b8b8" SelectedColor="358bf6" SelectedOutlineColor="002dff"/&gt;
+    &lt;RadioButton Name="rdb_space2" X="225" Y="125" Width="32" Height="32" Alpha="255" Value="" Checked="False" GroupName="radioButtonGroup2" ShowBackground="True" Color="d4d4d4" OutlineColor="b8b8b8" SelectedColor="358bf6" SelectedOutlineColor="002dff"/&gt;
+    &lt;RadioButton Name="rdb_space3" X="225" Y="180" Width="32" Height="32" Alpha="255" Value="" Checked="False" GroupName="radioButtonGroup2" ShowBackground="True" Color="d4d4d4" OutlineColor="b8b8b8" SelectedColor="358bf6" SelectedOutlineColor="002dff"/&gt;
+    &lt;TextBlock Name="text_info9" X="260" Y="70" Width="60" Height="32" Alpha="255" Text="30" TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="text_info10" X="260" Y="125" Width="60" Height="32" Alpha="255" Text="40" TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="text_info11" X="260" Y="180" Width="60" Height="32" Alpha="255" Text="60" TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+  &lt;/Window&gt;
+&lt;/Glide&gt;</value>
+  </data>
+  <data name="WinShutDown" xml:space="preserve">
+    <value>&lt;Glide Version="1.0.7"&gt;
+  &lt;Window Name="instance115" Width="320" Height="240" BackColor="FFFFFF"&gt;
+    &lt;TextBlock Name="text_main" X="90" Y="10" Width="220" Height="35" Alpha="255" Text="INFORMACE" TextAlign="Center" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;Button Name="btn_back" X="5" Y="10" Width="80" Height="32" Alpha="255" Text="Zpět" Font="4" FontColor="000000" DisabledFontColor="808080" TintColor="000000" TintAmount="0"/&gt;
+    &lt;TextBlock Name="text_info1" X="20" Y="60" Width="280" Height="32" Alpha="255" Text="--" TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="text_info2" X="20" Y="90" Width="280" Height="32" Alpha="255" Text="--" TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="text_info3" X="20" Y="120" Width="280" Height="32" Alpha="255" Text="--" TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="text_info4" X="20" Y="150" Width="280" Height="32" Alpha="255" Text="--" TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="text_info5" X="20" Y="198" Width="280" Height="32" Alpha="255" Text="--" TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+   &lt;/Window&gt;
+&lt;/Glide&gt;</value>
+  </data>
+  <data name="WinStop" xml:space="preserve">
+    <value>&lt;Glide Version="1.0.7"&gt;
+  &lt;Window Name="instance115" Width="320" Height="240" BackColor="FFFFFF"&gt;
+    &lt;TextBlock Name="text_main" X="50" Y="10" Width="220" Height="30" Alpha="255" Text="TISK MODELU" TextAlign="Center" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;Button Name="btn_yes" X="10" Y="198" Width="120" Height="32" Alpha="255" Text="Ano" Font="4" FontColor="000000" DisabledFontColor="808080" TintColor="000000" TintAmount="0"/&gt;
+    &lt;Button Name="btn_no" X="190" Y="198" Width="120" Height="32" Alpha="255" Text="Ne" Font="4" FontColor="000000" DisabledFontColor="808080" TintColor="000000" TintAmount="0"/&gt;
+    &lt;TextBlock Name="text_info1" X="15" Y="40" Width="295" Height="32" Alpha="255" Text="--" TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="text_info2" X="15" Y="70" Width="295" Height="30" Alpha="255" Text="--" TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="text_info3" X="15" Y="100" Width="295" Height="32" Alpha="255" Text="--" TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="text_info4" X="15" Y="130" Width="295" Height="32" Alpha="255" Text="--" TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+  &lt;/Window&gt;
+&lt;/Glide&gt;</value>
+  </data>
+  <data name="WinLanguageChange" xml:space="preserve">
+    <value>&lt;Glide Version="1.0.7"&gt;
+  &lt;Window Name="instance115" Width="320" Height="240" BackColor="FFFFFF"&gt;
+    &lt;TextBlock Name="text_main" X="90" Y="10" Width="220" Height="30" Alpha="255" Text="VYBER JAZYKU" TextAlign="Center" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;Button Name="btn_back" X="5" Y="10" Width="80" Height="32" Alpha="255" Text="Zpet" Font="4" FontColor="000000" DisabledFontColor="808080" TintColor="000000" TintAmount="0"/&gt;
+    &lt;Button Name="btn_ok" X="190" Y="198" Width="120" Height="32" Alpha="255" Text="OK" Font="4" FontColor="000000" DisabledFontColor="808080" TintColor="000000" TintAmount="0"/&gt;
+    &lt;Button Name="btn_prev" X="20" Y="160" Width="100" Height="32" Alpha="255" Text="Predchozi" Font="4" FontColor="000000" DisabledFontColor="808080" TintColor="000000" TintAmount="0"/&gt;
+    &lt;RadioButton Name="rdb_file1" X="25" Y="44" Width="32" Height="32" Alpha="255" Value="" Checked="False" GroupName="radioButtonGroup" ShowBackground="True" Color="d4d4d4" OutlineColor="b8b8b8" SelectedColor="358bf6" SelectedOutlineColor="002dff"/&gt;
+    &lt;RadioButton Name="rdb_file2" X="25" Y="83" Width="32" Height="32" Alpha="255" Value="" Checked="False" GroupName="radioButtonGroup" ShowBackground="True" Color="d4d4d4" OutlineColor="b8b8b8" SelectedColor="358bf6" SelectedOutlineColor="002dff"/&gt;
+    &lt;RadioButton Name="rdb_file3" X="25" Y="123" Width="32" Height="32" Alpha="255" Value="" Checked="False" GroupName="radioButtonGroup" ShowBackground="True" Color="d4d4d4" OutlineColor="b8b8b8" SelectedColor="358bf6" SelectedOutlineColor="002dff"/&gt;
+    &lt;Button Name="btn_next" X="200" Y="160" Width="100" Height="32" Alpha="255" Text="Dalsi" Font="4" FontColor="000000" DisabledFontColor="808080" TintColor="000000" TintAmount="0"/&gt;
+    &lt;TextBlock Name="text_file1" X="65" Y="44" Width="240" Height="32" Alpha="255" Text="--" TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="text_file2" X="65" Y="83" Width="240" Height="32" Alpha="255" Text="--" TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="text_file3" X="65" Y="123" Width="240" Height="32" Alpha="255" Text="--" TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+  &lt;/Window&gt;
+&lt;/Glide&gt;</value>
+  </data>
+  <data name="WinSettingOffset" xml:space="preserve">
+    <value>&lt;Glide Version="1.0.7"&gt;
+  &lt;Window Name="instance115" Width="320" Height="240" BackColor="FFFFFF"&gt;
+    &lt;TextBlock Name="text_main" X="90" Y="10" Width="220" Height="35" Alpha="255" Text="ÚPRAVA OFFSETU" TextAlign="Center" TextVerticalAlign="Middle" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;Button Name="btn_back" X="5" Y="10" Width="80" Height="32" Alpha="255" Text="Zpět" Font="4" FontColor="000000" DisabledFontColor="808080" TintColor="000000" TintAmount="0"/&gt;
+    &lt;TextBlock Name="text_info1" X="21" Y="63" Width="100" Height="32" Alpha="255" Text="Offset osa Z" TextAlign="center" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="text_offset" X="20" Y="97" Width="100" Height="32" Alpha="255" Text="--" TextAlign="center" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;Button Name="bt_save" X="200" Y="188" Width="90" Height="32" Alpha="255" Text="Uložit" Font="4" FontColor="000000" DisabledFontColor="808080" TintColor="000000" TintAmount="0"/&gt;
+    &lt;Button Name="bt_+0_1" X="225" Y="130" Width="50" Height="32" Alpha="255" Text="+" Font="4" FontColor="000000" DisabledFontColor="808080" TintColor="000000" TintAmount="0"/&gt;
+    &lt;Button Name="bt_-0_1" X="225" Y="65" Width="50" Height="32" Alpha="255" Text="-" Font="4" FontColor="000000" DisabledFontColor="808080" TintColor="000000" TintAmount="0"/&gt;
+    &lt;Button Name="bt_+0_01" X="150" Y="130" Width="50" Height="32" Alpha="255" Text="+" Font="4" FontColor="000000" DisabledFontColor="808080" TintColor="000000" TintAmount="0"/&gt;
+    &lt;Button Name="bt_-0_01" X="150" Y="65" Width="50" Height="32" Alpha="255" Text="-" Font="4" FontColor="000000" DisabledFontColor="808080" TintColor="000000" TintAmount="0"/&gt;
+    &lt;TextBlock Name="instance5303" X="150" Y="97" Width="50" Height="32" Alpha="255" Text="0,01" TextAlign="center" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="instance5559" X="225" Y="97" Width="50" Height="32" Alpha="255" Text="0,1" TextAlign="center" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;Button Name="bt_reload" X="30" Y="130" Width="90" Height="32" Alpha="255" Text="Reload" Font="4" FontColor="000000" DisabledFontColor="808080" TintColor="000000" TintAmount="0"/&gt;
+    &lt;Button Name="bt_testPrint" X="25" Y="188" Width="100" Height="32" Alpha="255" Text="Test offset" Font="4" FontColor="000000" DisabledFontColor="808080" TintColor="000000" TintAmount="0"/&gt;
+  &lt;/Window&gt;
+&lt;/Glide&gt;</value>
+  </data>
+  <data name="WinWaitingScreen" xml:space="preserve">
+    <value>&lt;Glide Version="1.0.7"&gt;
+  &lt;Window Name="instance115" Width="320" Height="240" BackColor="FFFFFF"&gt;
+    &lt;TextBlock Name="text_info" X="0" Y="80" Width="320" Height="40" Alpha="255" Text="Pleas wait" TextAlign="Center" TextVerticalAlign="Middle" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="text_progress" X="50" Y="110" Width="220" Height="32" Alpha="255" Text="...." TextAlign="Center" TextVerticalAlign="Middle" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;Button Name="btn_cancel" X="120" Y="180" Width="80" Height="32" Alpha="255" Text="Cancel" Font="4" FontColor="000000" DisabledFontColor="808080" TintColor="000000" TintAmount="0"/&gt;
+  &lt;/Window&gt;
+&lt;/Glide&gt;</value>
+  </data>
+  <data name="WinCutChangeSelector" xml:space="preserve">
+    <value>&lt;Glide Version="1.0.7"&gt;
+  &lt;Window Name="instance115" Width="320" Height="240" BackColor="FFFFFF"&gt;
+    &lt;TextBlock Name="text_main" X="50" Y="10" Width="220" Height="30" Alpha="255" Text="Vymena struny" TextAlign="Center" TextVerticalAlign="Top" Font="6" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;Button Name="btn_end" X="10" Y="198" Width="120" Height="32" Alpha="255" Text="Ukoncit vymenu" Font="4" FontColor="000000" DisabledFontColor="808080" TintColor="000000" TintAmount="0"/&gt;
+    &lt;Button Name="btn_continue" X="190" Y="198" Width="120" Height="32" Alpha="255" Text="Pokracovat" Font="4" FontColor="000000" DisabledFontColor="808080" TintColor="000000" TintAmount="0"/&gt;
+    &lt;TextBlock Name="text_info" X="10" Y="35" Width="300" Height="60" Alpha="255" Text="--" TextAlign="Center" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;ProgressBar Name="progressBar" X="21" Y="100" Width="283" Height="25" Alpha="255" Direction="Right" MaxValue="100" Value="0"/&gt;
+    &lt;Button Name="btn_repeat" X="189" Y="154" Width="120" Height="32" Alpha="255" Text="Opakovat" Font="4" FontColor="000000" DisabledFontColor="808080" TintColor="000000" TintAmount="0"/&gt;
+  &lt;/Window&gt;
+&lt;/Glide&gt;</value>
+  </data>
+  <data name="ubuntu_bold_17_utf8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>resources\ubuntu_bold_17_utf8.tinyfnt;System.Byte[], mscorlib, Version=4.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="ubuntu_bold_20_utf8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>resources\ubuntu_bold_20_utf8.tinyfnt;System.Byte[], mscorlib, Version=4.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="ubuntu_medium_16_utf8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>resources\ubuntu_medium_16_utf8.tinyfnt;System.Byte[], mscorlib, Version=4.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="WinTestServo" xml:space="preserve">
+    <value>&lt;Glide Version="1.0.7"&gt;
+  &lt;Window Name="instance115" Width="320" Height="240" BackColor="FFFFFF"&gt;
+    &lt;Button Name="btn_up" X="26" Y="70" Width="80" Height="32" Alpha="255" Text="UP" Font="4" FontColor="000000" DisabledFontColor="808080" TintColor="000000" TintAmount="0"/&gt;
+    &lt;Button Name="btn_50cycles" X="132" Y="108" Width="80" Height="32" Alpha="255" Text="50x cycles" Font="4" FontColor="000000" DisabledFontColor="808080" TintColor="000000" TintAmount="0"/&gt;
+    &lt;Button Name="btn_down" X="25" Y="140" Width="80" Height="32" Alpha="255" Text="DOWN" Font="4" FontColor="000000" DisabledFontColor="808080" TintColor="000000" TintAmount="0"/&gt;
+    &lt;Button Name="btn_infinity" X="226" Y="109" Width="80" Height="32" Alpha="255" Text="Infinity" Font="4" FontColor="000000" DisabledFontColor="808080" TintColor="000000" TintAmount="0"/&gt;
+    &lt;Button Name="btn_back" X="5" Y="10" Width="80" Height="32" Alpha="255" Text="Back" Font="4" FontColor="000000" DisabledFontColor="808080" TintColor="000000" TintAmount="0"/&gt;
+    &lt;TextBlock Name="txb_main" X="90" Y="10" Width="220" Height="35" Alpha="255" Text="TEST SERVO" TextAlign="Center" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="txb_50cycles" X="132" Y="68" Width="80" Height="32" Alpha="255" Text="0 / 50" TextAlign="Center" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="txb_infinity" X="226" Y="68" Width="80" Height="32" Alpha="255" Text="0" TextAlign="Center" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+  &lt;/Window&gt;
+&lt;/Glide&gt;</value>
+  </data>
+  <data name="WinCutChangeStoliceDGR" xml:space="preserve">
+    <value>&lt;Glide Version="1.0.7"&gt;
+  &lt;Window Name="instance115" Width="320" Height="240" BackColor="FFFFFF"&gt;
+    &lt;TextBlock Name="text_main" X="50" Y="10" Width="220" Height="30" Alpha="255" Text="Vymena struny" TextAlign="Center" TextVerticalAlign="Top" Font="6" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;Button Name="btn_end" X="10" Y="198" Width="120" Height="32" Alpha="255" Text="Ukoncit vymenu" Font="4" FontColor="000000" DisabledFontColor="808080" TintColor="000000" TintAmount="0"/&gt;
+    &lt;Button Name="btn_continue" X="190" Y="198" Width="120" Height="32" Alpha="255" Text="Pokracovat" Font="4" FontColor="000000" DisabledFontColor="808080" TintColor="000000" TintAmount="0"/&gt;
+    &lt;RadioButton Name="rdb_catgut1" X="10" Y="80" Width="32" Height="32" Alpha="255" Value="" Checked="True" GroupName="radioButtonGroup" ShowBackground="True" Color="d4d4d4" OutlineColor="b8b8b8" SelectedColor="358bf6" SelectedOutlineColor="002dff"/&gt;
+    &lt;RadioButton Name="rdb_catgut2" X="10" Y="120" Width="32" Height="32" Alpha="255" Value="" Checked="False" GroupName="radioButtonGroup" ShowBackground="True" Color="d4d4d4" OutlineColor="b8b8b8" SelectedColor="358bf6" SelectedOutlineColor="002dff"/&gt;
+    &lt;TextBlock Name="text_info" X="10" Y="35" Width="300" Height="60" Alpha="255" Text="--" TextAlign="Left" TextVerticalAlign="Top" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="text_catgut1" X="50" Y="80" Width="100" Height="32" Alpha="255" Text="ABS" TextAlign="Left" TextVerticalAlign="Middle" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;TextBlock Name="text_catgut2" X="50" Y="120" Width="100" Height="32" Alpha="255" Text="PLA" TextAlign="Left" TextVerticalAlign="Middle" Font="4" FontColor="0" BackColor="000000" ShowBackColor="False"/&gt;
+    &lt;ProgressBar Name="progressBar" X="21" Y="100" Width="283" Height="25" Alpha="255" Direction="Right" MaxValue="100" Value="0"/&gt;
+    &lt;Button Name="btn_repeat" X="189" Y="154" Width="120" Height="32" Alpha="255" Text="Opakovat" Font="4" FontColor="000000" DisabledFontColor="808080" TintColor="000000" TintAmount="0"/&gt;
+    &lt;ProgressBar Name="progressBar2" X="21" Y="41" Width="283" Height="25" Alpha="255" Direction="Right" MaxValue="100" Value="0"/&gt;
+    &lt;ProgressBar Name="progressBar3" X="22" Y="71" Width="283" Height="25" Alpha="255" Direction="Right" MaxValue="100" Value="0"/&gt;
+    &lt;ProgressBar Name="progressBar4" X="21" Y="131" Width="283" Height="25" Alpha="255" Direction="Right" MaxValue="100" Value="0"/&gt;
+    &lt;ProgressBar Name="progressBar5" X="22" Y="163" Width="283" Height="25" Alpha="255" Direction="Right" MaxValue="100" Value="0"/&gt;
+  &lt;/Window&gt;
+&lt;/Glide&gt;</value>
+  </data>
+</root>
