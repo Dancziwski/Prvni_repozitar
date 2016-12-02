@@ -183,7 +183,8 @@ namespace _3D_control_v09
         private static DeeControlManager _deeManager;
         private static UpsManager _upsManager;
        
-        private static SerialPort _uartPWB;
+        private static SerialPort _uartPWB1;
+        private static SerialPort _uartPWB2;
         private static SerialPort _rs232Pc;
         
 
@@ -211,8 +212,11 @@ namespace _3D_control_v09
         private static Thread _ThreadReceiveSerialRs232Thread;
         private const ThreadPriority PrioritySerialRs232Thread = ThreadPriority.Normal;
 
-        public static Thread _ThreadSenderReceiverSerialUart;
-        private const ThreadPriority PrioritySerialUartThread = ThreadPriority.Normal;
+        public static Thread _ThreadSenderReceiverSerialUart1;
+        public static Thread _ThreadSenderReceiverSerialUart2;
+        
+        private const ThreadPriority PrioritySerialUartThread1 = ThreadPriority.Normal;
+        private const ThreadPriority PrioritySerialUartThread2 = ThreadPriority.Normal;
 
 
         public static Thread _ThreadPrint;
@@ -237,7 +241,8 @@ namespace _3D_control_v09
 
             ConfigurationPrinter.GetInstance().verisonFWControl = VersionNumber; // nutne kvuli posilani Deecontrol
 
-            HardwareResetPrinter();
+            HardwareResetPrinter1();
+            //HardwareResetPrinter2();
 
             Debug.GC(true);
 
@@ -300,12 +305,12 @@ namespace _3D_control_v09
         // init USB,RS232,ETH atd...
         private static void InitCommunication()
         {
-            // PRINTER is UART
-            if (ConfigurationPrinter.GetInstance().GetConnectWithPrinter() == Constants.DEVICE_PRINTER.UART)
+            // PRINTER is UART1
+            if (ConfigurationPrinter.GetInstance().GetConnectWithPrinter() == Constants.DEVICE_PRINTER.UART1)
             {
 
                 //_uartPrinter = new SerialPort("COM4", 115200)
-                _uartPWB = new SerialPort("COM4", 250000)
+                _uartPWB1 = new SerialPort("COM4", 250000)
                     {
                         ReadTimeout = TimeoutSerialUart, 
                         WriteTimeout = TimeoutSerialUart,
@@ -315,14 +320,33 @@ namespace _3D_control_v09
                         Handshake = Handshake.None
                     };
              
-                _uartPWB.ErrorReceived += _uartPrinter_ErrorReceived;
-                _uartPWB.Open();
+                _uartPWB1.ErrorReceived += _uartPrinter_ErrorReceived;
+                _uartPWB1.Open();
+            }
+
+            // PRINTER is UART2
+            if (ConfigurationPrinter.GetInstance().GetConnectWithPrinter() == Constants.DEVICE_PRINTER.UART2)
+            {
+
+                //_uartPrinter = new SerialPort("COM4", 115200)
+                _uartPWB2 = new SerialPort("COM1", 250000)
+                {
+                    ReadTimeout = TimeoutSerialUart,
+                    WriteTimeout = TimeoutSerialUart,
+                    DataBits = 8,
+                    Parity = Parity.None,
+                    StopBits = StopBits.One,
+                    Handshake = Handshake.None
+                };
+
+                _uartPWB2.ErrorReceived += _uartPrinter_ErrorReceived;
+                _uartPWB2.Open();
             }
 
             //PC is RS232
             if (ConfigurationPrinter.GetInstance().GetConnectWithPc() == Constants.PC.RS232)
             {
-                _rs232Pc = new SerialPort("COM1", 115200)
+                _rs232Pc = new SerialPort("COM2", 115200) //puvodne com 1
                 //_rs232Pc = new SerialPort("COM1", 57600)
                      {
                          ReadTimeout = TimoutSerialRs232,
@@ -336,9 +360,13 @@ namespace _3D_control_v09
                 _rs232Pc.ErrorReceived += _rs232Pc_ErrorReceived;
                 _rs232Pc.Open();
 
-                _ThreadSenderReceiverSerialUart = new Thread(ThreadSenderReceiverDataForPrinterUart);
-                _ThreadSenderReceiverSerialUart.Priority = PrioritySerialUartThread;
-                _ThreadSenderReceiverSerialUart.Start();
+                _ThreadSenderReceiverSerialUart1 = new Thread(ThreadSenderReceiverDataForPrinterUart1);
+                _ThreadSenderReceiverSerialUart1.Priority = PrioritySerialUartThread1;
+                _ThreadSenderReceiverSerialUart1.Start();
+
+                //_ThreadSenderReceiverSerialUart2 = new Thread(ThreadSenderReceiverDataForPrinterUart2);
+                //_ThreadSenderReceiverSerialUart2.Priority = PrioritySerialUartThread2;
+                //_ThreadSenderReceiverSerialUart2.Start();
 
                 _ThreadReceiveSerialRs232Thread = new Thread(ThreadRs232ReceiveSerialData);
                 _ThreadReceiveSerialRs232Thread.Priority = PrioritySerialRs232Thread;
@@ -465,7 +493,8 @@ namespace _3D_control_v09
         #region THREAD
 
         private static bool _endThreadStateAndTemp = true;
-        private static bool _endThreadUartPowerBoard = true;    // pouziti pri aktualizaci FW
+        private static bool _endThreadUartPowerBoard1 = true;    // pouziti pri aktualizaci FW
+        private static bool _endThreadUartPowerBoard2 = true; 
 
         private static int sleepWaitThreadState500ms = 500;
         private static int sleepWaitThreadState2000ms = 2000;
@@ -614,38 +643,44 @@ namespace _3D_control_v09
         }
 
 
-        private static readonly Queue BufferUartSenderPrinter = new Queue();
+        private static readonly Queue BufferUartSenderPrinter1 = new Queue();
+        private static readonly Queue BufferUartSenderPrinter2 = new Queue();
         public static bool dataOK = false;
         public static bool resendData = false;    // preposle stary prikaz
 
-        public static Queue GetBufferUartSenderPrinter()
+        public static Queue GetBufferUartSenderPrinter1()
         {
-            return BufferUartSenderPrinter;
+            return BufferUartSenderPrinter1;
+        }
+
+        public static Queue GetBufferUartSenderPrinter2()
+        {
+            return BufferUartSenderPrinter2;
         }
 
         private static int watchdogCount = 0;
 
-        private static void ThreadSenderReceiverDataForPrinterUart()
+        private static void ThreadSenderReceiverDataForPrinterUart1()
         {
             const int numberOfData = 300;
 
             string gcode = "";
             bool isG1G0 = false;
 
-            while (_endThreadUartPowerBoard)
+            while (_endThreadUartPowerBoard1)
             {
-                //Send data
+                //Send data PWB1
                 #region SendDataPowerBoard
-                if (BufferUartSenderPrinter.Count > 0 || resendData)
+                if (BufferUartSenderPrinter1.Count > 0 || resendData)
                 {
                     if (!resendData)
                     {
                         #region filtrace dat
 
-                        lock (BufferUartSenderPrinter)
+                        lock (BufferUartSenderPrinter1)
                         {
                             // pokud je resend nevyvedavej dalsi data
-                            gcode = (string)BufferUartSenderPrinter.Dequeue();
+                            gcode = (string)BufferUartSenderPrinter1.Dequeue();
                         }
 
                         //filtr - pokud radek zacina ; zahod je to komentar
@@ -714,7 +749,7 @@ namespace _3D_control_v09
                     }
 
                     Debug.Print(gcode);       
-                    _uartPWB.Write(b, 0, b.Length);
+                    _uartPWB1.Write(b, 0, b.Length);
                     Thread.Sleep(5);
 
                 }
@@ -725,7 +760,8 @@ namespace _3D_control_v09
                 //ReceiveData
                 do
                 {
-                    ReadAndWorkUartPWB();
+                    ReadAndWorkUartPWB1();
+                    
                     
                     watchdogCount++;
 
@@ -738,22 +774,156 @@ namespace _3D_control_v09
 
                 isG1G0 = false;
 
-                if (BufferUartSenderPrinter.Count == 0)
+                if (BufferUartSenderPrinter1.Count == 0)
                 {
                     if (StateHolder.GetInstance().FileDataTransfer || PrintThreadBufferActive)
                         Debug.Print("wait on data...");
                     
                     Thread.Sleep(400);
                 }
+
+              
             }
+
+            
+        }
+        //--------------------------------------------------------------------------------------------------------------
+
+        private static void ThreadSenderReceiverDataForPrinterUart2()
+        {
+            const int numberOfData = 300;
+
+            string gcode = "";
+            bool isG1G0 = false;
+
+            while (_endThreadUartPowerBoard2)
+            {
+                //Send data PWB2
+                #region SendDataPowerBoard
+                if (BufferUartSenderPrinter2.Count > 0 || resendData)
+                {
+                    if (!resendData)
+                    {
+                        #region filtrace dat
+
+                        lock (BufferUartSenderPrinter2)
+                        {
+                            // pokud je resend nevyvedavej dalsi data
+                            gcode = (string)BufferUartSenderPrinter2.Dequeue();
+                        }
+
+                        //filtr - pokud radek zacina ; zahod je to komentar
+                        if (gcode == "" || gcode.Substring(0, 1) == ";")
+                            continue;
+                        //filtr - odstranuje komentare za prikazem
+                        if (gcode.IndexOf(';') > -1)
+                            gcode = gcode.Substring(0, gcode.IndexOf(';'));
+                        //filtr - odstranuje \r jako znak, ne pri prenosu dat
+                        if (gcode.IndexOf('\r') > -1 && !StateHolder.GetInstance().FileDataTransfer)
+                            gcode = gcode.Substring(0, gcode.IndexOf('\r'));
+
+                        #endregion
+                    }
+
+                    dataOK = false;
+                    resendData = false;
+                    byte[] b;
+
+                    if (StateHolder.GetInstance().FileDataTransfer)
+                    {
+                        #region convertFileDataTransfer
+                        if (gcode.IndexOf("M29") > -1)
+                        {
+                            Debug.Print(gcode);
+                            StateHolder.GetInstance().FileDataTransfer = false;
+                        }
+
+                        //pokud nema gcode 300 znaku doplni ho '\n'
+                        if (gcode.Length < numberOfData)
+                        {
+
+                            int number = numberOfData - gcode.Length;
+                            Debug.Print("doplnuji data: " + number);
+                            for (int i = 0; i < number; i++)
+                            {
+                                gcode += Constants.chNln;
+                            }
+                        }
+
+                        b = Encoding.UTF8.GetBytes(gcode + Constants.chDlr);
+                        #endregion
+                    }
+                    else
+                    {
+                        #region convertNormalState
+                        if (gcode.IndexOf("M28") > -1)
+                        {
+                            //zahajeni prenosu a ukladani dat
+                            Debug.Print(gcode);
+                            StateHolder.GetInstance().FileDataTransfer = true;
+                        }
+
+                        if (gcode.IndexOf("G1") > -1 || gcode.IndexOf("G0") > -1)
+                            isG1G0 = true;
+
+                        if (gcode.IndexOf("M105") > -1)
+                            dataOK = true;
+
+                        gcode = GcodeManagere.CreateGcodeForMarlin(gcode);
+                        b = Encoding.UTF8.GetBytes(gcode + Constants.chNln);
+
+                        if (gcode.IndexOf("M112") > -1)
+                            GcodeManagere.SetCountInstruction(1);
+                        #endregion
+                    }
+
+                    Debug.Print(gcode);
+                    _uartPWB2.Write(b, 0, b.Length);
+                    Thread.Sleep(5);
+
+                }
+                #endregion
+
+                watchdogCount = 0;
+
+                //ReceiveData
+                do
+                {
+                    ReadAndWorkUartPWB2();
+
+
+                    watchdogCount++;
+
+                    if (watchdogCount == 300 && (PrintThreadBufferActive || PrintThreadActive) && isG1G0)
+                        dataOK = true;
+
+                }
+                // pokud prenasime data cekej na ok nebo no, jinak pokracuj dal
+                while ((StateHolder.GetInstance().FileDataTransfer && !dataOK) || ((PrintThreadActive && !dataOK) || (PrintThreadBufferActive && !dataOK)));
+
+                isG1G0 = false;
+
+                if (BufferUartSenderPrinter2.Count == 0)
+                {
+                    if (StateHolder.GetInstance().FileDataTransfer || PrintThreadBufferActive)
+                        Debug.Print("wait on data...");
+
+                    Thread.Sleep(400);
+                }
+
+
+            }
+
+
         }
 
+        //--------------------------------------------------------------------------------------------------------------
         public static void EndThreadSenderReceiverDataForPrinter()
         {
-            _endThreadUartPowerBoard = false;
+            _endThreadUartPowerBoard1 = false;
 
             //pockej na ukonceni vlakna
-            while (_ThreadSenderReceiverSerialUart != null && _ThreadSenderReceiverSerialUart.IsAlive)
+            while (_ThreadSenderReceiverSerialUart1 != null && _ThreadSenderReceiverSerialUart1.IsAlive)
             {
                 Thread.Sleep(10);
             }
@@ -793,7 +963,7 @@ namespace _3D_control_v09
                     while (!SendDataFromPC) ;
                 }
 
-                if (BufferUartSenderPrinter.Count < 20)
+                if (BufferUartSenderPrinter1.Count < 20)
                 {
                     StateHolder.GetInstance().ActPrintState = Constants.PRINT_STATE.Print;
                     readFromPC = true;
@@ -941,15 +1111,15 @@ namespace _3D_control_v09
 
         }
 
-        public static void HardwareResetPrinter()
+        public static void HardwareResetPrinter1()
         {
             Debug.Print("HardwareReset powerboard");
 
             EndThreadRefreshState(); // ukonci vlakno na cyklicke vycitani teploty
 
-            SerialBufferUartPWB.LoadSerial(_uartPWB);
-            SerialBufferUartPWB.ClearBuffer();
-            BufferUartSenderPrinter.Clear();
+            SerialBufferUartPWB1.LoadSerial(_uartPWB1);
+            SerialBufferUartPWB1.ClearBuffer();
+            BufferUartSenderPrinter1.Clear();
             GcodeManagere.SetCountInstruction(1);
             Thread.Sleep(100);
 
@@ -971,19 +1141,62 @@ namespace _3D_control_v09
 
         }
 
-        public static void DiscartUartPrinter()
+        public static void HardwareResetPrinter2()
         {
-            _uartPWB.DiscardInBuffer();
+            Debug.Print("HardwareReset powerboard");
+
+            EndThreadRefreshState(); // ukonci vlakno na cyklicke vycitani teploty
+
+            SerialBufferUartPWB2.LoadSerial(_uartPWB2);
+            SerialBufferUartPWB2.ClearBuffer();
+            BufferUartSenderPrinter2.Clear();
+            GcodeManagere.SetCountInstruction(1);
+            Thread.Sleep(100);
+
+            PinResetPowerBoard.Write(false);
+            Thread.Sleep(100);
+
+            PinResetPowerBoard.Write(true);
+            Thread.Sleep(100);
+
+            PrintThreadActive = false;
+
+            StateHolder.GetInstance().IsMountingSD = false;
+            StateHolder.GetInstance().ReadingFileListFromSD = false;
+            StateHolder.GetInstance().ReadingParametrsFromFile = false;
+            StateHolder.GetInstance().DataLoadingFromSD = false;
+            StateHolder.GetInstance().DataParametersLoadingFromSD = false;
+
+            CreateThreadRefreshState();
+
+        }
+
+        public static void DiscartUartPrinter1()
+        {
+            _uartPWB1.DiscardInBuffer();
+        }
+
+        public static void DiscartUartPrinter2()
+        {
+            _uartPWB2.DiscardInBuffer();
         }
 
 
         #region DATA SEND
 
-        public static void SendDataToPrinter(string data)
+        public static void SendDataToPrinter1(string data)
         {
-            lock (BufferUartSenderPrinter)
+            lock (BufferUartSenderPrinter1)
             {
-                BufferUartSenderPrinter.Enqueue(data);
+                BufferUartSenderPrinter1.Enqueue(data);
+            }
+        }
+
+        public static void SendDataToPrinter2(string data)
+        {
+            lock (BufferUartSenderPrinter2)
+            {
+                BufferUartSenderPrinter2.Enqueue(data);
             }
         }
 
@@ -1000,10 +1213,12 @@ namespace _3D_control_v09
         #region DATA RECEIVED
 
         private static readonly SerialBuffer SerialBufferRs232 = new SerialBuffer(1024);
-        private static readonly SerialBuffer SerialBufferUartPWB = new SerialBuffer(1024);
+        private static readonly SerialBuffer SerialBufferUartPWB1 = new SerialBuffer(1024);
+        private static readonly SerialBuffer SerialBufferUartPWB2 = new SerialBuffer(1024);
 
         private static string dataCommandPC;
-        private static string dataCommandPWB;
+        private static string dataCommandPWB1;
+        private static string dataCommandPWB2;
 
 
         private static void ThreadRs232ReceiveSerialData()
@@ -1039,19 +1254,35 @@ namespace _3D_control_v09
 
         }
          
-        private static void ReadAndWorkUartPWB()
+        private static void ReadAndWorkUartPWB1()
         {
-            if (_uartPWB == null || !_uartPWB.IsOpen)
+            if (_uartPWB1 == null || !_uartPWB1.IsOpen)
                 return;
 
-            SerialBufferUartPWB.LoadSerial(_uartPWB);
+            SerialBufferUartPWB1.LoadSerial(_uartPWB1);
            
-            while ((dataCommandPWB = SerialBufferUartPWB.ReadLine()) != null)
+            while ((dataCommandPWB1 = SerialBufferUartPWB1.ReadLine()) != null)
             {
-                MarlinManager.GetInstace().CommandWorkerUart(dataCommandPWB);
+                MarlinManager.GetInstace().CommandWorkerUart(dataCommandPWB1);
 
                 // opetovne cteni portu abychom neztratili data 
-                SerialBufferUartPWB.LoadSerial(_uartPWB);
+                SerialBufferUartPWB1.LoadSerial(_uartPWB1);
+            }
+        }
+
+        private static void ReadAndWorkUartPWB2()
+        {
+            if (_uartPWB2 == null || !_uartPWB2.IsOpen)
+                return;
+
+            SerialBufferUartPWB2.LoadSerial(_uartPWB2);
+
+            while ((dataCommandPWB2 = SerialBufferUartPWB2.ReadLine()) != null)
+            {
+                MarlinManager.GetInstace().CommandWorkerUart(dataCommandPWB2);
+
+                // opetovne cteni portu abychom neztratili data 
+                SerialBufferUartPWB2.LoadSerial(_uartPWB2);
             }
         }
 

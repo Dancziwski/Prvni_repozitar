@@ -76,7 +76,8 @@ namespace _3D_control_v09
             if(Program.UPS == Be3D.Constants.Constants.UPS.OK)
                 LCDManager.GetInstance().UpsUp();
 
-            Program.HardwareResetPrinter();
+            Program.HardwareResetPrinter1();
+            Program.HardwareResetPrinter2();
 
             LCDManager.GetInstance().UpdateScreenLcd(LCDManager.GetInstance().GetMainScreen(), "");
         }

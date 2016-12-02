@@ -298,7 +298,7 @@ namespace _3D_control_v09
 
             if (_actExt == Constants.EXTRUDER.ExtruderSecondary) // T1
             {
-                actTemp = StateHolder.GetInstance().ActTempSecundaryExt;
+                actTemp = StateHolder.GetInstance().ActTempSecondaryExt;
                 setTemp = StateHolder.GetInstance().ActSetTempSecondary;
             }
 

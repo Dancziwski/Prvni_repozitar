@@ -63,7 +63,7 @@ namespace _3D_control_v09
         {
             //set units to Millimeters
             string gCode = "G21";
-            Program.SendDataToPrinter(gCode);
+            Program.SendDataToPrinter1(gCode);
 
             SetAbsolutePosition();
 
@@ -73,14 +73,14 @@ namespace _3D_control_v09
         {
             // set to Absolute Position
             string gCode = "G90";
-            Program.SendDataToPrinter(gCode);
+            Program.SendDataToPrinter1(gCode);
         }
 
         private void SetRelativePosition()
         {
             // set to relative Position
             string gCode = "G91";
-            Program.SendDataToPrinter(gCode);
+            Program.SendDataToPrinter1(gCode);
         }
 
         public void SetCurrentPosition(double[] position)
@@ -93,21 +93,21 @@ namespace _3D_control_v09
             if(position[4] != 0.0)
                 gCode += " E" + position[4];
 
-            Program.SendDataToPrinter(gCode);
+            Program.SendDataToPrinter1(gCode);
         }
 
         public void GetCurrentPosition()
         {
             //M114
             string gCode = "M114";
-            Program.SendDataToPrinter(gCode);
+            Program.SendDataToPrinter1(gCode);
         }
 
         public void GetTachoFilament()
         {
             //M123
             string gCode = "M123";
-            Program.SendDataToPrinter(gCode);
+            Program.SendDataToPrinter1(gCode);
         }
 
         #region TOOLS
@@ -115,7 +115,8 @@ namespace _3D_control_v09
         {
             //M105
             string code = "M105";
-            Program.SendDataToPrinter(code);
+            Program.SendDataToPrinter1(code);
+            Program.SendDataToPrinter2(code);
         }
 
         public void SetActExtruder(Constants.EXTRUDER extr)
@@ -125,8 +126,20 @@ namespace _3D_control_v09
                 code = "T0";
             if (extr == Constants.EXTRUDER.ExtruderSecondary)
                 code = "T1";
+            if (extr == Constants.EXTRUDER.ExtruderThird)
+                code = "T2";
 
-            Program.SendDataToPrinter(code);
+            
+            //---------------------------------------
+
+            if (extr == Constants.EXTRUDER.ExtruderFourth)
+                code = "T3";
+            if (extr == Constants.EXTRUDER.ExtruderFifth)
+                code = "T4";
+
+            Program.SendDataToPrinter1(code);
+            Program.SendDataToPrinter2(code);
+            
         }
 
         public void SetExtruderTempAndWait(Constants.EXTRUDER extr, int temp)
@@ -140,7 +153,19 @@ namespace _3D_control_v09
             if (extr == Constants.EXTRUDER.ExtruderSecondary)
                 code = "M109 T1 S" + temp;
 
-            Program.SendDataToPrinter(code);
+            if (extr == Constants.EXTRUDER.ExtruderThird)
+                code = "M109 T2 S" + temp;
+
+            
+            //-----------------------------------------
+            if (extr == Constants.EXTRUDER.ExtruderFourth)
+                code = "M109 T3 S" + temp;
+
+            if (extr == Constants.EXTRUDER.ExtruderFifth)
+                code = "M109 T4 S" + temp;
+
+            Program.SendDataToPrinter1(code);
+            Program.SendDataToPrinter2(code);
         }
 
         public void SetExtruderTemp(Constants.EXTRUDER extr, int temp)
@@ -157,20 +182,30 @@ namespace _3D_control_v09
             if (extr == Constants.EXTRUDER.ExtruderThird)
                 code = "M104 T2 S" + temp;
 
-            Program.SendDataToPrinter(code);
+            
+           // ----------------------------------------------------
+            if (extr == Constants.EXTRUDER.ExtruderFourth)
+                code = "M104 T3 S" + temp;
+
+            if (extr == Constants.EXTRUDER.ExtruderFifth)
+                code = "M104 T4 S" + temp;
+
+            Program.SendDataToPrinter1(code);
+            Program.SendDataToPrinter2(code);
+            
         }
 
         public void SetBedTemp(int temp)
         {
             //M140 S55
             string code = "M140 S" + temp;
-            Program.SendDataToPrinter(code);
+            Program.SendDataToPrinter1(code);
         }
         
         public void SetFanSpeed(int speed) 
         {
             string code = "M106 S" + speed;
-            Program.SendDataToPrinter(code);
+            Program.SendDataToPrinter1(code);
         }
 
         #endregion
@@ -181,14 +216,14 @@ namespace _3D_control_v09
         {
             string gCode = "M124";
 
-            Program.SendDataToPrinter(gCode);
+            Program.SendDataToPrinter1(gCode);
 
         }
 
         public void MoveEmergencyStop()
         {
             string gCode = "M112";
-            Program.SendDataToPrinter(gCode);
+            Program.SendDataToPrinter1(gCode);
 
         }
 
@@ -196,7 +231,7 @@ namespace _3D_control_v09
         {
             SetAbsolutePosition();
             string code = "G28";
-            Program.SendDataToPrinter(code);
+            Program.SendDataToPrinter1(code);
 
         }
 
@@ -222,7 +257,7 @@ namespace _3D_control_v09
                 code = code = "G1 X-35 Y250 Z" + moveZ + " F4000";
             }
 
-            Program.SendDataToPrinter(code);
+            Program.SendDataToPrinter1(code);
         }
 
         public void GoToLastPositionPrint(Constants.EXTRUDER actExtr)
@@ -234,15 +269,15 @@ namespace _3D_control_v09
 
             //nastavit extruder
             if (actExtr == Constants.EXTRUDER.ExtruderPrimary)
-                Program.SendDataToPrinter("G92 E" + Program._basicConfig.LatestPositionExtruder[3]);
+                Program.SendDataToPrinter1("G92 E" + Program._basicConfig.LatestPositionExtruder[3]);
             
             if (actExtr == Constants.EXTRUDER.ExtruderSecondary)
-                Program.SendDataToPrinter("G92 E" + Program._basicConfig.LatestPositionExtruder[4]);
+                Program.SendDataToPrinter1("G92 E" + Program._basicConfig.LatestPositionExtruder[4]);
 
 
             //vratit se na posledni pozici
             string code = "G1 X" + x + " Y" + y + " Z" + z +" F4000";
-            Program.SendDataToPrinter(code);
+            Program.SendDataToPrinter1(code);
 
 
 
@@ -260,7 +295,7 @@ namespace _3D_control_v09
 
 
             string code = "G1 Z" + Program._basicConfig.LatestPositionExtruder[2] + " F4000";
-            Program.SendDataToPrinter(code);     
+            Program.SendDataToPrinter1(code);     
         }
 
         public void MoveToBedUpInMM(double mm)
@@ -272,7 +307,7 @@ namespace _3D_control_v09
                 Program._basicConfig.LatestPositionExtruder[2] = 0;
 
             string code = "G1 Z" + Program._basicConfig.LatestPositionExtruder[2] + " F4000";
-            Program.SendDataToPrinter(code); 
+            Program.SendDataToPrinter1(code); 
            
         }
 
@@ -281,33 +316,36 @@ namespace _3D_control_v09
         public void MoveToX0Y0Z20()
         {
             string code = "G1 X0 Y0 Z20 F3000";
-            Program.SendDataToPrinter(code);
+            Program.SendDataToPrinter1(code);
         }
 
         public void MoveToX0Y0()
         {
             string code = "G1 X0 Y0 F3000";
-            Program.SendDataToPrinter(code);
+            Program.SendDataToPrinter1(code);
         }
 
         public void MoveToMaxPosition()
         {
             string code = StateHolder.GetInstance().GetMoveMaxPosition();
-            Program.SendDataToPrinter(code);
+            Program.SendDataToPrinter1(code);
+            Program.SendDataToPrinter2(code);
         }
 
         public void MotorEnable()
         {
             //M17
             string gCode = "M17";
-            Program.SendDataToPrinter(gCode);
+            Program.SendDataToPrinter1(gCode);
+            Program.SendDataToPrinter2(gCode);
         }
 
         public void MotorDisable()
         {
             //M18
             string gCode = "M18";
-            Program.SendDataToPrinter(gCode);
+            Program.SendDataToPrinter1(gCode);
+            Program.SendDataToPrinter2(gCode);
         }
 
         public void MoveSpeedSpringUp(Constants.EXTRUDER ext, string mm)
@@ -318,25 +356,43 @@ namespace _3D_control_v09
             if (ext == Constants.EXTRUDER.ExtruderPrimary)
             {
                 string gCode = "T0";
-                Program.SendDataToPrinter(gCode);
+                Program.SendDataToPrinter1(gCode);
+                Program.SendDataToPrinter2(gCode);
             }
 
             if (ext == Constants.EXTRUDER.ExtruderSecondary)
             {
                 string gCode = "T1";
-                Program.SendDataToPrinter(gCode);
+                Program.SendDataToPrinter1(gCode);
+                Program.SendDataToPrinter2(gCode);
             }
 
             if (ext == Constants.EXTRUDER.ExtruderThird)
             {
                 string gCode = "T2";
-                Program.SendDataToPrinter(gCode);
+                Program.SendDataToPrinter1(gCode);
+                Program.SendDataToPrinter2(gCode);
+            }
+
+            if (ext == Constants.EXTRUDER.ExtruderFourth)
+            {
+                string gCode = "T3";
+                Program.SendDataToPrinter1(gCode);
+                Program.SendDataToPrinter2(gCode);
+            }
+
+            if (ext == Constants.EXTRUDER.ExtruderFifth)
+            {
+                string gCode = "T4";
+                Program.SendDataToPrinter1(gCode);
+                Program.SendDataToPrinter2(gCode);
             }
             //string code = "G1 E-60 F180"; // orig 60 na prani Toma 80
             //string code = "G1 E-80 F200";
             string code = "G1 E" + mm + " F4000";
 
-            Program.SendDataToPrinter(code);
+            Program.SendDataToPrinter1(code);
+            Program.SendDataToPrinter2(code);
 
             SetAbsolutePosition();
         }
@@ -349,24 +405,41 @@ namespace _3D_control_v09
             if (ext == Constants.EXTRUDER.ExtruderPrimary)
             {
                 string gCode = "T0";
-                Program.SendDataToPrinter(gCode);
+                Program.SendDataToPrinter1(gCode);
+                Program.SendDataToPrinter2(gCode);
             }
 
             if (ext == Constants.EXTRUDER.ExtruderSecondary)
             {
                 string gCode = "T1";
-                Program.SendDataToPrinter(gCode);
+                Program.SendDataToPrinter1(gCode);
+                Program.SendDataToPrinter2(gCode);
             }
 
             if (ext == Constants.EXTRUDER.ExtruderThird)
             {
                 string gCode = "T2";
-                Program.SendDataToPrinter(gCode);
+                Program.SendDataToPrinter1(gCode);
+                Program.SendDataToPrinter2(gCode);
+            }
+
+            if (ext == Constants.EXTRUDER.ExtruderFourth)
+            {
+                string gCode = "T3";
+                Program.SendDataToPrinter1(gCode);
+            }
+
+            if (ext == Constants.EXTRUDER.ExtruderFifth)
+            {
+                string gCode = "T4";
+                Program.SendDataToPrinter1(gCode);
+                Program.SendDataToPrinter2(gCode);
             }
 
             string code = "G1 E"+ mm +" F" + speed;
     
-            Program.SendDataToPrinter(code);
+            Program.SendDataToPrinter1(code);
+            Program.SendDataToPrinter2(code);
             SetAbsolutePosition();
         }
 
@@ -375,17 +448,17 @@ namespace _3D_control_v09
             //sjede smerem dolu o danou delku
             
             string code = "G92 Z0"; //pokud jedeme proti koncaku, muzeme si dovolit, jinak si pøi pøerušeni M124 tiskarna tiskarna mysli ze je na pozici
-            Program.SendDataToPrinter(code);
+            Program.SendDataToPrinter1(code);
 
             code = StateHolder.GetInstance().GetMoveParkPosition();   
-            Program.SendDataToPrinter(code);
+            Program.SendDataToPrinter1(code);
 
         }
 
         public void MoveSetSpeed40mm()
         {
             string gCode = "G1 F2400";
-            Program.SendDataToPrinter(gCode);
+            Program.SendDataToPrinter1(gCode);
         }
 
         public void MoveHomePosition()
@@ -393,7 +466,7 @@ namespace _3D_control_v09
             SetRelativePosition();
 
             string code = StateHolder.GetInstance().GetMoveHomeZ();
-            Program.SendDataToPrinter(code);
+            Program.SendDataToPrinter1(code);
 
             //nevime v jake poloze jsme, nutne ji nastavit maximalni a zajet do 0,0 - duvodem je nemoznost stopnout G28 pomoci M124
             SetAbsolutePosition();
@@ -401,10 +474,10 @@ namespace _3D_control_v09
             GcodeManagere.GetInstance().SetCurrentPosition(ConfigurationPrinter.GetInstance().GetPrinterSize());
 
             code = StateHolder.GetInstance().GetMoveHomeX();
-            Program.SendDataToPrinter(code);
+            Program.SendDataToPrinter1(code);
 
             code = StateHolder.GetInstance().GetMoveHomeY();
-            Program.SendDataToPrinter(code);
+            Program.SendDataToPrinter1(code);
         }
 
 
@@ -415,14 +488,14 @@ namespace _3D_control_v09
         {
             // set to Absolute Position
             string gCode = "M280 P0 S" + angle;
-            Program.SendDataToPrinter(gCode);
+            Program.SendDataToPrinter1(gCode);
         }
 
         public void runServoCycle()
         {
             // set to Absolute Position
             string gCode = "G30";
-            Program.SendDataToPrinter(gCode);
+            Program.SendDataToPrinter1(gCode);
         }
 
     }

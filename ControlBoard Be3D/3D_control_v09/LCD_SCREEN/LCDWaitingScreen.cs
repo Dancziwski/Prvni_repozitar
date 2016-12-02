@@ -51,7 +51,8 @@ namespace _3D_control_v09
         private void btn_cancel_TapEvent(object sender)
         {
             if (StateHolder.GetInstance().ActState == Constants.ACTUAL_STATE.MotionTest)
-                Program.HardwareResetPrinter();
+                Program.HardwareResetPrinter1();
+                
             else
                 LCDManager.GetInstance().MoveStop();
 

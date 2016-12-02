@@ -57,17 +57,24 @@ namespace _3D_control_v09
         public int ActSetTempPrimary = Program._basicConfig.DefTmpRefExtr0;
         public int ActSetTempSecondary = Program._basicConfig.DefTmpRefExtr1;
         public int ActSetTempThird = Program._basicConfig.DefTmpRefExtr1; // každý další extruder má stejnou hodnotu teploty jako extruder 2
+        public int ActSetTempFourth = Program._basicConfig.DefTmpRefExtr1; // každý další extruder má stejnou hodnotu teploty jako extruder 2
+        public int ActSetTempFifth = Program._basicConfig.DefTmpRefExtr1; // každý další extruder má stejnou hodnotu teploty jako extruder 2
         public int ActSetTempSpace = Program._basicConfig.DefTmpRefSpace;
         public int ActSetTempBed = Program._basicConfig.DefTmpRefBed;
         
         public int ActSetTempInPowerBordPrimExt = 0;
         public int ActSetTempInPowerBordSecundExt = 0;
         public int ActSetTempInPowerBordThirdExt = 0;
+        public int ActSetTempInPowerBordFourthExt = 0;
+        public int ActSetTempInPowerBordFifthExt = 0;
 
         //aktualni hodnoty teploty
         public int ActTempPrimaryExt = 0;
-        public int ActTempSecundaryExt = 0;
+        public int ActTempSecondaryExt = 0;
         public int ActTempThirdExt = 0;
+        public int ActTempFourthExt = 0;
+        public int ActTempFifthExt = 0;
+       
         public int ActTempSpace = 0;
         public int ActTempBed = 0;
 

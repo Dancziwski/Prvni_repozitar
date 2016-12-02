@@ -526,4 +526,19 @@
   <data name="TextFinish" xml:space="preserve">
     <value>Dokončit</value>
   </data>
+  <data name="TextExtruze1" xml:space="preserve">
+    <value>Extruze 1. tryska</value>
+  </data>
+  <data name="TextExtruze2" xml:space="preserve">
+    <value>Extruze 2. tryska</value>
+  </data>
+  <data name="TextExtruze3" xml:space="preserve">
+    <value>Extruze 3. tryska</value>
+  </data>
+  <data name="TextExtruze4" xml:space="preserve">
+    <value>Extruze 4. tryska</value>
+  </data>
+  <data name="TextExtruze5" xml:space="preserve">
+    <value>Extruze 5. tryska</value>
+  </data>
 </root>

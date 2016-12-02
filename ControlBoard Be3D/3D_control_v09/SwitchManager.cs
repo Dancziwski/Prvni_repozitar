@@ -191,7 +191,7 @@ namespace _3D_control_v09
 
                 LCDWaitingScreen.disableIncrement = true;
 
-                Program.HardwareResetPrinter();
+                Program.HardwareResetPrinter1();
                 LCDManager.GetInstance().UpdateScreenLcd(LCDManager.GetInstance().GetMainScreen(), "");
 
                 return;

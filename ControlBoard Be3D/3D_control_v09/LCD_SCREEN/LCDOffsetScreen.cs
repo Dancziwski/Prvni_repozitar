@@ -89,7 +89,7 @@ namespace _3D_control_v09
 
         public void RefreshOffset()
         {
-            Program.SendDataToPrinter("M565");
+            Program.SendDataToPrinter1("M565");
         }
 
         public void UpdateOffset()
@@ -107,7 +107,7 @@ namespace _3D_control_v09
 
         private void btn_reload_TapEvent(object sender)
         {
-            Program.SendDataToPrinter("M565");
+            Program.SendDataToPrinter1("M565");
         }
 
         private void btn_save_TapEvent(object sender)
@@ -115,8 +115,8 @@ namespace _3D_control_v09
             if (text_offsetScreen.Text == Constants.strNoOffset)
                 return;
 
-            Program.SendDataToPrinter("M565 Z" + StateHolder.GetInstance().offsetZ);
-            Program.SendDataToPrinter("M500");
+            Program.SendDataToPrinter1("M565 Z" + StateHolder.GetInstance().offsetZ);
+            Program.SendDataToPrinter1("M500");
 
             StateHolder.GetInstance().offsetZ = 0.0;
             UpdateOffset();
@@ -128,8 +128,8 @@ namespace _3D_control_v09
             //ulozi hodnotu do eeprom
             if (text_offsetScreen.Text != "--")
             {
-                Program.SendDataToPrinter("M565 Z" + StateHolder.GetInstance().offsetZ);
-                Program.SendDataToPrinter("M500");
+                Program.SendDataToPrinter1("M565 Z" + StateHolder.GetInstance().offsetZ);
+                Program.SendDataToPrinter1("M500");
             }
 
             // jsou uzavrene dvere1 nebo 2
@@ -156,14 +156,14 @@ namespace _3D_control_v09
 
             Thread.Sleep(500);
 
-            Program.GetBufferUartSenderPrinter().Enqueue("G21");
-            Program.GetBufferUartSenderPrinter().Enqueue("G90");
-            Program.GetBufferUartSenderPrinter().Enqueue("M104 S220");
-            Program.GetBufferUartSenderPrinter().Enqueue("G28");
-            Program.GetBufferUartSenderPrinter().Enqueue("G29");
-            Program.GetBufferUartSenderPrinter().Enqueue("M109 S220");
-            Program.GetBufferUartSenderPrinter().Enqueue("T0");
-            Program.GetBufferUartSenderPrinter().Enqueue("G92 E0");
+            Program.GetBufferUartSenderPrinter1().Enqueue("G21");
+            Program.GetBufferUartSenderPrinter1().Enqueue("G90");
+            Program.GetBufferUartSenderPrinter1().Enqueue("M104 S220");
+            Program.GetBufferUartSenderPrinter1().Enqueue("G28");
+            Program.GetBufferUartSenderPrinter1().Enqueue("G29");
+            Program.GetBufferUartSenderPrinter1().Enqueue("M109 S220");
+            Program.GetBufferUartSenderPrinter1().Enqueue("T0");
+            Program.GetBufferUartSenderPrinter1().Enqueue("G92 E0");
 
 
             double[] maxPlatformSizeXYZ = ConfigurationPrinter.GetInstance().GetPrinterSize();
@@ -178,15 +178,15 @@ namespace _3D_control_v09
             string f = "2400";
 
             //X0,Y0
-            Program.GetBufferUartSenderPrinter().Enqueue("G1 X" + x + " Y" + y + " Z" + z + " E" + e + " F" + f);
+            Program.GetBufferUartSenderPrinter1().Enqueue("G1 X" + x + " Y" + y + " Z" + z + " E" + e + " F" + f);
 
             //X150 Y150
             x = "" + maxPlatformSizeXYZ[0];
             y = "" + maxPlatformSizeXYZ[1];
             e = "" + (uhlopricka * magicConstant);
 
-            Program.GetBufferUartSenderPrinter().Enqueue("G1 X" + x + " Y" + y + " Z" + z + " E" + e + " F" + f);
-            Program.GetBufferUartSenderPrinter().Enqueue("G92 E0");
+            Program.GetBufferUartSenderPrinter1().Enqueue("G1 X" + x + " Y" + y + " Z" + z + " E" + e + " F" + f);
+            Program.GetBufferUartSenderPrinter1().Enqueue("G92 E0");
 
 
             //x150 y0
@@ -194,28 +194,28 @@ namespace _3D_control_v09
             y = "0";
             e = "" + (maxPlatformSizeXYZ[1] * magicConstant);
 
-            Program.GetBufferUartSenderPrinter().Enqueue("G1 X" + x + " Y" + y + " Z" + z + " E" + e + " F" + f);
-            Program.GetBufferUartSenderPrinter().Enqueue("G92 E0");
+            Program.GetBufferUartSenderPrinter1().Enqueue("G1 X" + x + " Y" + y + " Z" + z + " E" + e + " F" + f);
+            Program.GetBufferUartSenderPrinter1().Enqueue("G92 E0");
 
             //x0 y150
             x = "0";
             y = "" + maxPlatformSizeXYZ[1];
             e = "" + (uhlopricka * magicConstant); ;
 
-            Program.GetBufferUartSenderPrinter().Enqueue("G1 X" + x + " Y" + y + " Z" + z + " E" + e + " F" + f);
-            Program.GetBufferUartSenderPrinter().Enqueue("G92 E0");
+            Program.GetBufferUartSenderPrinter1().Enqueue("G1 X" + x + " Y" + y + " Z" + z + " E" + e + " F" + f);
+            Program.GetBufferUartSenderPrinter1().Enqueue("G92 E0");
 
             //x0 y0
             x = "0";
             y = "0";
             e = "" + (maxPlatformSizeXYZ[1] * magicConstant);
 
-            Program.GetBufferUartSenderPrinter().Enqueue("G1 X" + x + " Y" + y + " Z" + z + " E" + e + " F" + f);
-            Program.GetBufferUartSenderPrinter().Enqueue("G92 E0");
+            Program.GetBufferUartSenderPrinter1().Enqueue("G1 X" + x + " Y" + y + " Z" + z + " E" + e + " F" + f);
+            Program.GetBufferUartSenderPrinter1().Enqueue("G92 E0");
 
 
-            Program.GetBufferUartSenderPrinter().Enqueue("G1 Z100");
-            Program.GetBufferUartSenderPrinter().Enqueue("M104 S0");
+            Program.GetBufferUartSenderPrinter1().Enqueue("G1 Z100");
+            Program.GetBufferUartSenderPrinter1().Enqueue("M104 S0");
 
         }
 
@@ -258,7 +258,8 @@ namespace _3D_control_v09
 
         private void btn_shutdown_back_TapEvent(object sender)
         {
-            Program.HardwareResetPrinter();
+            Program.HardwareResetPrinter1();
+            Program.HardwareResetPrinter2();
 
             LCDManager.GetInstance().UpdateScreenLcd(LCDManager.GetInstance().GetMainScreen(), "");
         }

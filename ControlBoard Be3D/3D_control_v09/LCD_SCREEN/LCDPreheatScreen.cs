@@ -180,8 +180,10 @@ namespace _3D_control_v09
                 UpdateTempBedAct(Constants.strFailTemp);
 
             UpdateTempExt1Act(StateHolder.GetInstance().ActTempPrimaryExt.ToString() + Constants.strStC);
-            UpdateTempExt2Act(StateHolder.GetInstance().ActTempSecundaryExt.ToString() + Constants.strStC);
+            UpdateTempExt2Act(StateHolder.GetInstance().ActTempSecondaryExt.ToString() + Constants.strStC);
             UpdateTempExt3Act(StateHolder.GetInstance().ActTempThirdExt.ToString() + Constants.strStC);
+            UpdateTempExt3Act(StateHolder.GetInstance().ActTempFourthExt.ToString() + Constants.strStC);
+            UpdateTempExt3Act(StateHolder.GetInstance().ActTempFifthExt.ToString() + Constants.strStC);
 
             if (StateHolder.GetInstance().ActTempSpace > 10 && StateHolder.GetInstance().ActTempSpace < 150)
                 UpdateTempSpaceAct(StateHolder.GetInstance().ActTempSpace.ToString() + Constants.strStC);

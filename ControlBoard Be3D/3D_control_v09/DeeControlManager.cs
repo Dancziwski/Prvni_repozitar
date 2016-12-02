@@ -212,7 +212,7 @@ namespace _3D_control_v09
                                 break;
                             }
 
-                            Program.DiscartUartPrinter();
+                            Program.DiscartUartPrinter1();
                             Program.EndThreadRefreshState();
 
                             //Thread.Sleep(500);
@@ -379,7 +379,7 @@ namespace _3D_control_v09
         public string GetExtruderTemp()
         {
             sb.Clear();
-            sb.Append("RET:EXTTEMP_1|" + StateHolder.GetInstance().ActTempSecundaryExt + "," + StateHolder.GetInstance().ActSetTempSecondary + ";");
+            sb.Append("RET:EXTTEMP_1|" + StateHolder.GetInstance().ActTempSecondaryExt + "," + StateHolder.GetInstance().ActSetTempSecondary + ";");
 
             if (ConfigurationPrinter.GetInstance().IsPresentSecondaryExtruder())
                 sb.Append("RET:EXTTEMP_2|" + StateHolder.GetInstance().ActTempPrimaryExt + "," + StateHolder.GetInstance().ActSetTempPrimary + ";");
@@ -619,7 +619,7 @@ namespace _3D_control_v09
             if (state == "DONE")
             {
                 Program.PrintThreadBufferActive = false;
-                while (Program.GetBufferUartSenderPrinter().Count == 0)
+                while (Program.GetBufferUartSenderPrinter1().Count == 0)
                 {
                     Thread.Sleep(100);
                 }
@@ -744,7 +744,7 @@ namespace _3D_control_v09
             if (code == "")
                 return "RET:GCD|FAIL_EMPTY;";
 
-                Program.SendDataToPrinter(code);
+                Program.SendDataToPrinter1(code);
                 return "RET:GCD|OK;";
         }
 
@@ -786,7 +786,7 @@ namespace _3D_control_v09
             {
                 Debug.Print("Restart watchdog");
                 StateHolder.GetInstance().FileDataTransfer = false;
-                Program.HardwareResetPrinter();
+                Program.HardwareResetPrinter1();
                 LCDManager.IsActivateErrorScreen = false;
 
                 LCDManager.GetInstance().UpdateScreenLcd(LCDManager.GetInstance().GetMainScreen(), "");
@@ -805,7 +805,7 @@ namespace _3D_control_v09
 
                 for (int i = 0; i < arr.Length; i++)
                 {
-                    Program.GetBufferUartSenderPrinter().Enqueue(arr[i]);
+                    Program.GetBufferUartSenderPrinter1().Enqueue(arr[i]);
                 }
             }
             else
@@ -823,7 +823,7 @@ namespace _3D_control_v09
 
             _sdManager.EndWriteDataToFile(ActFileName);
 
-            while (Program.GetBufferUartSenderPrinter().Count != 0)
+            while (Program.GetBufferUartSenderPrinter1().Count != 0)
             {
                 _checkWatchdog = true;
                 Thread.Sleep(100);

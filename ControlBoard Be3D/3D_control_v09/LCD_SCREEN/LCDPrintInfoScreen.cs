@@ -149,7 +149,7 @@ namespace _3D_control_v09
         {
             UpdatePrintInfoModelName(StateHolder.GetInstance().PrintFile);
             UpdatePrintInfoState();
-            UpdatePrintInfoTempExt(StateHolder.GetInstance().ActTempPrimaryExt, StateHolder.GetInstance().ActTempSecundaryExt);
+            UpdatePrintInfoTempExt(StateHolder.GetInstance().ActTempPrimaryExt, StateHolder.GetInstance().ActTempSecondaryExt);
             UpdatePrintInfoTempBed(StateHolder.GetInstance().ActTempBed);
             UpdatePrintInfoTempSpace(StateHolder.GetInstance().ActTempSpace);
             UpdatePrintInfoProgressBar();

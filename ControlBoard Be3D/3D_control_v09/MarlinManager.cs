@@ -318,7 +318,7 @@ namespace _3D_control_v09
 
                 if (result == ModalResult.Ok)
                 {
-                    Program.HardwareResetPrinter();
+                    Program.HardwareResetPrinter1();
                 }
 
                 Debug.Print("PWB: " + command);
@@ -472,7 +472,7 @@ namespace _3D_control_v09
                                     if (Program._actSelectExtrOnPowerboard == Constants.EXTRUDER.ExtruderPrimary)
                                         StateHolder.GetInstance().ActTempPrimaryExt = (int)Convert.ToDouble(str[1]);
                                     if (Program._actSelectExtrOnPowerboard == Constants.EXTRUDER.ExtruderSecondary)
-                                        StateHolder.GetInstance().ActTempSecundaryExt = (int)Convert.ToDouble(str[1]);
+                                        StateHolder.GetInstance().ActTempSecondaryExt = (int)Convert.ToDouble(str[1]);
                                     break;
                                 }
                             case "T0":
@@ -484,7 +484,7 @@ namespace _3D_control_v09
                                 }
                             case "T1":
                                 {
-                                    StateHolder.GetInstance().ActTempSecundaryExt = (int)Convert.ToDouble(str[1]);
+                                    StateHolder.GetInstance().ActTempSecondaryExt = (int)Convert.ToDouble(str[1]);
                                     StateHolder.GetInstance().ActSetTempInPowerBordSecundExt = (int)Convert.ToDouble(tempExt[i + 1].Substring(1, tempExt[i + 1].Length - 1)); //uklada teplotu nastavenou /0.0
                                     //Program.dataOK = true;
                                     break;
@@ -493,6 +493,20 @@ namespace _3D_control_v09
                                 {
                                     StateHolder.GetInstance().ActTempThirdExt = (int)Convert.ToDouble(str[1]);
                                     StateHolder.GetInstance().ActSetTempInPowerBordThirdExt = (int)Convert.ToDouble(tempExt[i + 1].Substring(1, tempExt[i + 1].Length - 1)); //uklada teplotu nastavenou /0.0
+                                    //Program.dataOK = true;
+                                    break;
+                                }
+                            case "T3":
+                                {
+                                    StateHolder.GetInstance().ActTempFourthExt = (int)Convert.ToDouble(str[1]);
+                                    StateHolder.GetInstance().ActSetTempInPowerBordFourthExt = (int)Convert.ToDouble(tempExt[i + 1].Substring(1, tempExt[i + 1].Length - 1)); //uklada teplotu nastavenou /0.0
+                                    //Program.dataOK = true;
+                                    break;
+                                }
+                            case "T4":
+                                {
+                                    StateHolder.GetInstance().ActTempFifthExt = (int)Convert.ToDouble(str[1]);
+                                    StateHolder.GetInstance().ActSetTempInPowerBordFifthExt = (int)Convert.ToDouble(tempExt[i + 1].Substring(1, tempExt[i + 1].Length - 1)); //uklada teplotu nastavenou /0.0
                                     //Program.dataOK = true;
                                     break;
                                 }

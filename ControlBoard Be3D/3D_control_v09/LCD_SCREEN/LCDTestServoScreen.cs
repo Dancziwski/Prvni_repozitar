@@ -161,7 +161,8 @@ namespace _3D_control_v09
             }
 
             runCycle = false;
-            Program.HardwareResetPrinter();
+            Program.HardwareResetPrinter1();
+            Program.HardwareResetPrinter2();
         }
 
       

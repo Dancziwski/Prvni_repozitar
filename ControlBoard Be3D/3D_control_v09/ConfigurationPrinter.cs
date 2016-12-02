@@ -240,7 +240,7 @@ namespace _3D_control_v09
         
         public Constants.DEVICE_PRINTER GetConnectWithPrinter()
         {
-            var result = Constants.DEVICE_PRINTER.UART;
+            var result = Constants.DEVICE_PRINTER.UART1;
 
             return result;
         }

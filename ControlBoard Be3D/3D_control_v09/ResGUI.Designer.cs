@@ -54,6 +54,7 @@ namespace _3D_control_v09
             WinSettingOffset = 6544,
             WinPreheater = 8533,
             WinCutChange = 9906,
+            pokus = 10728,
             WinTestServo = 12842,
             WinSettings = 21167,
             WinError = 21603,

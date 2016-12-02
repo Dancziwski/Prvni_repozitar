@@ -612,7 +612,7 @@ namespace _3D_control_v09
             if (Program.PrintThreadBufferActive)    // nutne vycistit buffer
             {
                 Program.PrintThreadBufferActive = false;
-                Program.GetBufferUartSenderPrinter().Clear();
+                Program.GetBufferUartSenderPrinter1().Clear();
             }
 
             Program.StopWatcherPrint();
@@ -625,7 +625,7 @@ namespace _3D_control_v09
                 lenght = -60;
             
             Program.SendDataToPc(_deeContrManager.StsPrintStop());
-            Program.HardwareResetPrinter();
+            Program.HardwareResetPrinter1();
 
             LCDManager.GetInstance().MoveString(Program._actSelectExtrOnPowerboard, "" + lenght, "" + speed);
             freezScreen(lenght, speed);
@@ -742,7 +742,7 @@ namespace _3D_control_v09
             int setTempPrimEx = Program._basicConfig.IntReserve1;
             int setTempSecEx = Program._basicConfig.IntReserve2;
             double actTempPrimEx = StateHolder.GetInstance().ActTempPrimaryExt;
-            int actTempSecEx = StateHolder.GetInstance().ActTempSecundaryExt;
+            int actTempSecEx = StateHolder.GetInstance().ActTempSecondaryExt;
 
             //1, opetovne nahrati trysky
             Debug.Print("G120: Zapinam vyhrev PRIM: " + setTempPrimEx + "SEC:" + setTempSecEx);
@@ -764,7 +764,8 @@ namespace _3D_control_v09
             while ((actTempSecEx < setTempSecEx))
             {
                 Thread.Sleep(500);
-                actTempPrimEx = StateHolder.GetInstance().ActTempPrimaryExt;
+                //actTempPrimEx = StateHolder.GetInstance().ActTempPrimaryExt;
+                actTempPrimEx = StateHolder.GetInstance().ActTempSecondaryExt;
             }
 
 
@@ -774,6 +775,15 @@ namespace _3D_control_v09
 
             if (Program._basicConfig.LatestPositionExtruder[4] != 0.0)
                 Program._actSelectExtrOnPowerboard = Constants.EXTRUDER.ExtruderSecondary;
+
+            if (Program._basicConfig.LatestPositionExtruder[5] != 0.0)
+                Program._actSelectExtrOnPowerboard = Constants.EXTRUDER.ExtruderThird;
+
+            if (Program._basicConfig.LatestPositionExtruder[6] != 0.0)
+                Program._actSelectExtrOnPowerboard = Constants.EXTRUDER.ExtruderFourth;
+
+            if (Program._basicConfig.LatestPositionExtruder[7] != 0.0)
+                Program._actSelectExtrOnPowerboard = Constants.EXTRUDER.ExtruderFifth;
 
 
             //2, nasunuti vlakna (kazda tiskarna jinak)
@@ -955,8 +965,8 @@ namespace _3D_control_v09
             }
             if (ext == Constants.EXTRUDER.ExtruderThird)
             {
-                StateHolder.GetInstance().ActSetTempThird = temp;
-                _gCodeManager.SetExtruderTemp(ext, StateHolder.GetInstance().ActSetTempThird);
+                StateHolder.GetInstance().ActSetTempFifth = temp;
+                _gCodeManager.SetExtruderTemp(ext, StateHolder.GetInstance().ActSetTempFifth);
             }
 
         }

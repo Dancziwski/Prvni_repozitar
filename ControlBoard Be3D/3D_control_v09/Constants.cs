@@ -84,6 +84,9 @@ namespace Be3D.Constants
             ExtruderPrimary = 0,
             ExtruderSecondary = 1,
             ExtruderThird = 2,
+            ExtruderFourth = 3,
+            ExtruderFifth = 4,
+            ExtruderSixth = 5,
         }
 
         public enum MATERIAL
@@ -103,7 +106,8 @@ namespace Be3D.Constants
         public enum DEVICE_PRINTER
         {
             USB = 1,
-            UART = 2,
+            UART1 = 2,
+            UART2 = 3,
         }
 
         public enum PC

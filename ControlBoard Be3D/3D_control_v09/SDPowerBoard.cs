@@ -16,7 +16,7 @@ namespace _3D_control_v09
         {
             string code = "M34 " + StateHolder.GetInstance().PrintFile.ToLower() + " ";
 
-            Program.SendDataToPrinter(code);
+            Program.SendDataToPrinter1(code);
 
             for (int i = 0; i < 50; i++)
             {
@@ -36,7 +36,7 @@ namespace _3D_control_v09
 
             //string code = Gcode.CreateGcodeForMarlin("M20");
             string code = "M20";
-            Program.SendDataToPrinter(code);
+            Program.SendDataToPrinter1(code);
 
         }
 
@@ -45,7 +45,7 @@ namespace _3D_control_v09
             //M21
             //string code = Gcode.CreateGcodeForMarlin("M21");
             string code = "M21";
-            Program.SendDataToPrinter(code);
+            Program.SendDataToPrinter1(code);
         }
 
         public  void ReleaseSDcard()
@@ -53,13 +53,13 @@ namespace _3D_control_v09
             //M22
             //string code = Gcode.CreateGcodeForMarlin("M22");
             string code = "M22";
-            Program.SendDataToPrinter(code);
+            Program.SendDataToPrinter1(code);
         }
 
         public void GetStateSpaceSD()
         {
             string code = "M33";
-            Program.SendDataToPrinter(code);
+            Program.SendDataToPrinter1(code);
         }
 
         public  bool SelectSdFileForPrint(string nameFile)
@@ -72,7 +72,7 @@ namespace _3D_control_v09
 
             //string code = Gcode.CreateGcodeForMarlin("M23 " + nameFile);
             string code = "M23 " + nameFile;
-            Program.SendDataToPrinter(code);
+            Program.SendDataToPrinter1(code);
 
             return true;
         }
@@ -82,7 +82,7 @@ namespace _3D_control_v09
             //M24
             //string code = Gcode.CreateGcodeForMarlin("M24");
             string code = "M24";
-            Program.SendDataToPrinter(code);
+            Program.SendDataToPrinter1(code);
 
         }
 
@@ -91,7 +91,7 @@ namespace _3D_control_v09
             //M25
             //string code = Gcode.CreateGcodeForMarlin("M25");
             string code = "M25";
-            Program.SendDataToPrinter(code);
+            Program.SendDataToPrinter1(code);
         }
 
         public  void SetSdPosition(int position)
@@ -99,7 +99,7 @@ namespace _3D_control_v09
             //M26 S12345
             //string code = Gcode.CreateGcodeForMarlin("M26 S" + position);
             string code = "M26 S" + position + " ";
-            Program.SendDataToPrinter(code);
+            Program.SendDataToPrinter1(code);
         }
 
         public  void GetSdPrintStatus()
@@ -107,32 +107,32 @@ namespace _3D_control_v09
             //M27 
             //string code = Gcode.CreateGcodeForMarlin("M27");
             string code = "M27";
-            Program.SendDataToPrinter(code);
+            Program.SendDataToPrinter1(code);
         }
       
         public void CreateFileAndStartWriteDataToFile(string name)
         {
             //string code = Gcode.CreateGcodeForMarlin("M28 " + name);
             string code = "M28 " + name + " ";
-            Program.SendDataToPrinter(code);
+            Program.SendDataToPrinter1(code);
         }
 
         public void AddDataToFile(string gcode)
         {
-            Program.SendDataToPrinter(gcode);
+            Program.SendDataToPrinter1(gcode);
         }
 
         public void EndWriteDataToFile(string name)
         {
             string code = "M29 " + name + " ";
-            Program.SendDataToPrinter(code);
+            Program.SendDataToPrinter1(code);
         }
 
         public void DeleteFileFromSd(string name)
         {
             //string code = Gcode.CreateGcodeForMarlin("M30 " + name);
             string code = "M30 " + name + " ";
-            Program.SendDataToPrinter(code);
+            Program.SendDataToPrinter1(code);
 
         }
 

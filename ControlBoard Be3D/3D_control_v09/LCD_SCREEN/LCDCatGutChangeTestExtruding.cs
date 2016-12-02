@@ -12,7 +12,7 @@ namespace _3D_control_v09
         private static LCDCatGutChangeTestExtruding _instance;
 
         //private static Window window = GlideLoader.LoadWindow(ResGUI.GetString(ResGUI.StringResources.WinCutChange));
-        private static Window window = GlideLoader.LoadWindow(ResGUI.GetString(ResGUI.StringResources.WinCutChangeStoliceDGR));
+        private static Window window = GlideLoader.LoadWindow(ResGUI.GetString(ResGUI.StringResources.pokus));
 
         private Button btn_continue;
         private Button btn_repeat;
@@ -31,8 +31,25 @@ namespace _3D_control_v09
         private RadioButton rdb_extr1_yes;
         private RadioButton rdb_extr2_no;
 
+        private RadioButton rdb_ext3;
+        private RadioButton rdb_ext4;
+        private RadioButton rdb_ext5;
+        private RadioButton rdb_ext6;
+        private RadioButton rdb_ext7;
+        private RadioButton rdb_ext8;
+        
+        
+       
+
         private TextBlock text_extr1_yes;
         private TextBlock text_extr2_no;
+
+        private TextBlock text_extr3;
+        private TextBlock text_extr4;
+        private TextBlock text_extr5;
+        private TextBlock text_extr6;
+        private TextBlock text_extr7;
+        private TextBlock text_extr8;
 
         private Constants.FILCHANGE_STATE _stateCatGut;
 
@@ -66,6 +83,8 @@ namespace _3D_control_v09
                 oldTempExt1 = StateHolder.GetInstance().ActSetTempInPowerBordPrimExt;
                 oldTempExt2 = StateHolder.GetInstance().ActSetTempInPowerBordSecundExt;
                 oldTempExt3 = StateHolder.GetInstance().ActSetTempInPowerBordThirdExt;
+                oldTempExt3 = StateHolder.GetInstance().ActSetTempInPowerBordFourthExt;
+                oldTempExt3 = StateHolder.GetInstance().ActSetTempInPowerBordFifthExt;
             }
 
             //GetActExtruder();
@@ -80,8 +99,18 @@ namespace _3D_control_v09
                 LCDManager.GetInstance().StartHeatingExt(Constants.EXTRUDER.ExtruderThird, StateHolder.GetInstance().ActSetTempForCatGut);
             
             // ma se spustit pruvodce volbou extruderu ? 
-            if(Program.Type == Constants.TYPE_PRINTER.DeeRed1_3 || Program.Type == Constants.TYPE_PRINTER.DeeRed2_1 || Program.Type == Constants.TYPE_PRINTER.DREStolice) {
+            if (Program.Type == Constants.TYPE_PRINTER.DeeRed1_3 || Program.Type == Constants.TYPE_PRINTER.DeeRed2_1 || Program.Type == Constants.TYPE_PRINTER.DREStolice)
+            {
                 rdb_extr1_yes.Checked = true;
+                rdb_extr2_no.Checked = false;
+
+                InitScreenSelExtr();
+                return;
+            }
+
+            if (Program.Type == Constants.TYPE_PRINTER.DGRStolice3 || Program.Type == Constants.TYPE_PRINTER.DGRStolice5)
+            {
+                rdb_extr1_yes.Checked = false;
                 rdb_extr2_no.Checked = false;
 
                 InitScreenSelExtr();
@@ -123,13 +152,48 @@ namespace _3D_control_v09
             text_extr1_yes.Font = StateHolder.FontUbuntuSmall;
             text_extr2_no = (TextBlock) window.GetChildByName("text_catgut2");
             text_extr2_no.Font = StateHolder.FontUbuntuSmall;
-           
+
+            text_extr3 = (TextBlock)window.GetChildByName("text_catgut3");
+            text_extr3.Font = StateHolder.FontUbuntuSmall;
+            text_extr4 = (TextBlock)window.GetChildByName("text_catgut4");
+            text_extr4.Font = StateHolder.FontUbuntuSmall;
+            text_extr5 = (TextBlock)window.GetChildByName("text_catgut5");
+            text_extr5.Font = StateHolder.FontUbuntuSmall;
+            text_extr6 = (TextBlock)window.GetChildByName("text_catgut6");
+            text_extr6.Font = StateHolder.FontUbuntuSmall;
+            text_extr7 = (TextBlock)window.GetChildByName("text_catgut7");
+            text_extr7.Font = StateHolder.FontUbuntuSmall;
+            text_extr8 = (TextBlock)window.GetChildByName("text_catgut8");
+            text_extr8.Font = StateHolder.FontUbuntuSmall;
 
             rdb_extr1_yes = (RadioButton) window.GetChildByName("rdb_catgut1");
             rdb_extr1_yes.TapEvent += new OnTap(rdb_1_TapEvent);
 
             rdb_extr2_no = (RadioButton) window.GetChildByName("rdb_catgut2");
             rdb_extr2_no.TapEvent += new OnTap(rdb_2_TapEvent);
+
+            rdb_ext3 = (RadioButton) window.GetChildByName("rdb_catgut3");
+            rdb_ext3.TapEvent += new OnTap(rdb_3_TapEvent);
+
+            rdb_ext4 = (RadioButton) window.GetChildByName("rdb_catgut4");
+            rdb_ext4.TapEvent += new OnTap(rdb_4_TapEvent);
+
+            rdb_ext5 = (RadioButton)window.GetChildByName("rdb_catgut5");
+            rdb_ext5.TapEvent += new OnTap(rdb_5_TapEvent);
+
+            rdb_ext6 = (RadioButton)window.GetChildByName("rdb_catgut6");
+            rdb_ext6.TapEvent += new OnTap(rdb_6_TapEvent);
+
+            rdb_ext7 = (RadioButton)window.GetChildByName("rdb_catgut7");
+            rdb_ext7.TapEvent += new OnTap(rdb_7_TapEvent);
+
+            rdb_ext8 = (RadioButton)window.GetChildByName("rdb_catgut8");
+            rdb_ext8.TapEvent += new OnTap(rdb_8_TapEvent);
+
+
+                   
+
+            
 
             addUpsBox();
 
@@ -145,8 +209,7 @@ namespace _3D_control_v09
             _stateCatGut = Constants.FILCHANGE_STATE.SelectExtr;
 
             text_info.Text = Resources.GetString(Resources.StringResources.scrCatGutChScr0Tx1);
-            text_extr1_yes.Text = Resources.GetString(Resources.StringResources.scrCatGutChScr0Cat1);
-            text_extr2_no.Text = Resources.GetString(Resources.StringResources.scrCatGutChScr0Cat2);
+            
 
             progress_change_state.Visible = false;
             progress_change_state2.Visible = false;
@@ -154,22 +217,62 @@ namespace _3D_control_v09
             progress_change_state4.Visible = false;
             progress_change_state5.Visible = false;
 
-            text_extr1_yes.Visible = true;
-            text_extr2_no.Visible = false;
-            rdb_extr1_yes.Visible = true;
-            rdb_extr2_no.Visible = false;
+            if (Program.Type == Constants.TYPE_PRINTER.DGRStolice3 || Program.Type == Constants.TYPE_PRINTER.DGRStolice5)
+            {
+                text_extr1_yes.Visible = false;
+                text_extr2_no.Visible = false;
+                rdb_extr1_yes.Visible = false;
+                rdb_extr2_no.Visible = false;
+                
+                rdb_ext3.Visible = true;
+                rdb_ext4.Visible = true;
+                rdb_ext5.Visible = true;
+                rdb_ext6.Visible = true;
+                rdb_ext7.Visible = true;
+                rdb_ext8.Visible = true;
 
+                text_extr3.Visible = true;
+                text_extr4.Visible = true;
+                text_extr5.Visible = true;
+                text_extr6.Visible = true;
+                text_extr7.Visible = true;
+                text_extr8.Visible = true;
+
+            }
+
+            else {
+
+                text_extr1_yes.Text = Resources.GetString(Resources.StringResources.scrCatGutChScr0Cat1);
+                text_extr2_no.Text = Resources.GetString(Resources.StringResources.scrCatGutChScr0Cat2);
+
+                text_extr1_yes.Visible = true;
+                text_extr2_no.Visible = false;
+                rdb_extr1_yes.Visible = true;
+                rdb_extr2_no.Visible = false;
+
+                rdb_ext3.Visible = false;
+                rdb_ext4.Visible = false;
+                rdb_ext5.Visible = false;
+                rdb_ext6.Visible = false;
+                rdb_ext7.Visible = false;
+                rdb_ext8.Visible = false;
+
+                if (ConfigurationPrinter.GetInstance().IsPresentSecondaryExtruder())
+                {
+                    text_extr2_no.Visible = true;
+                    rdb_extr2_no.Visible = true;
+                }
+            
+            }
+           
+     
             btn_repeat.Visible = false;
             btn_continue.Enabled = true;
             btn_end.Visible = true;
 
             btn_continue.Text = Resources.GetString(Resources.StringResources.TextContinue);
 
-            if (ConfigurationPrinter.GetInstance().IsPresentSecondaryExtruder())
-            {
-                text_extr2_no.Visible = true;
-                rdb_extr2_no.Visible = true;
-            }
+           
  
             window.Invalidate();
 
@@ -199,8 +302,30 @@ namespace _3D_control_v09
             rdb_extr1_yes.Visible = false;
             rdb_extr2_no.Visible = false;
 
-            if (Program.Type == Constants.TYPE_PRINTER.DGRStolice3 || Program.Type == Constants.TYPE_PRINTER.DGRStolice5)
+            rdb_ext3.Visible = false;
+            rdb_ext4.Visible = false;
+            rdb_ext5.Visible = false;
+            rdb_ext6.Visible = false;
+            rdb_ext7.Visible = false;
+            rdb_ext8.Visible = false;
+
+            text_extr3.Visible = false;
+            text_extr4.Visible = false;
+            text_extr5.Visible = false;
+            text_extr6.Visible = false;
+            text_extr7.Visible = false;
+            text_extr8.Visible = false;
+            
+            
+            
+
+            
+
+            if (Program.Type == Constants.TYPE_PRINTER.DGRStolice3 || Program.Type == Constants.TYPE_PRINTER.DGRStolice5){
                 UpdateIndividualProgressBar();
+                text_info.Visible = false;
+            }
+                
             else
                 UpdateProgressBar();
             
@@ -220,14 +345,14 @@ namespace _3D_control_v09
 
             text_extr1_yes.Text = Resources.GetString(Resources.StringResources.TextRemove);
             text_extr2_no.Text = Resources.GetString(Resources.StringResources.TextFeedIn);
-              
 
+            text_info.Visible = true;
             progress_change_state.Visible = false;
             progress_change_state2.Visible = false;
             progress_change_state3.Visible = false;
             progress_change_state4.Visible = false;
             progress_change_state5.Visible = false;
-
+            
 
             text_extr1_yes.Visible = true;
             text_extr2_no.Visible = true;
@@ -237,6 +362,25 @@ namespace _3D_control_v09
             rdb_extr1_yes.Checked = true;
             rdb_extr2_no.Checked = false;
 
+            if (Program.Type == Constants.TYPE_PRINTER.DGRStolice3)
+            {
+                rdb_ext3.Visible = false;
+                rdb_ext4.Visible = false;
+                rdb_ext5.Visible = false;
+                rdb_ext6.Visible = false;
+                rdb_ext7.Visible = false;
+                rdb_ext8.Visible = false;
+
+                text_extr3.Visible = false;
+                text_extr4.Visible = false;
+                text_extr5.Visible = false;
+                text_extr6.Visible = false;
+                text_extr7.Visible = false;
+                text_extr8.Visible = false;
+                
+                
+               
+            }
             window.Invalidate();
 
             
@@ -247,7 +391,7 @@ namespace _3D_control_v09
             _stateCatGut = Constants.FILCHANGE_STATE.UpFilament;
 
             text_info.Text = Resources.GetString(Resources.StringResources.scrCatGutChScr3Tx1);
-
+            
             //***************   Change catgut window 1 **********************
             progress_change_state.Visible = false;
             progress_change_state2.Visible = false;
@@ -260,8 +404,24 @@ namespace _3D_control_v09
             rdb_extr1_yes.Visible = false;
             rdb_extr2_no.Visible = false;
 
-            window.Invalidate();
+            rdb_ext3.Visible = false;
+            rdb_ext4.Visible = false;
+            rdb_ext5.Visible = false;
+            rdb_ext6.Visible = false;
+            rdb_ext7.Visible = false;
+            rdb_ext8.Visible = false;
 
+            text_extr3.Visible = false;
+            text_extr4.Visible = false;
+            text_extr5.Visible = false;
+            text_extr6.Visible = false;
+            text_extr7.Visible = false;
+            text_extr8.Visible = false;
+            
+            
+
+            window.Invalidate();
+            
 
             string speedFill = "200";
             //TODO prasarna pøedìlat do rozumného stavu
@@ -270,11 +430,13 @@ namespace _3D_control_v09
 
             if (Program.Type == Constants.TYPE_PRINTER.DGRStolice3)
             {
+
+                if (_actExt == Constants.EXTRUDER.ExtruderSixth) { 
                 _actExt = Constants.EXTRUDER.ExtruderPrimary;
                 LCDManager.GetInstance().MoveString(_actExt, "-0.1", speedFill);
                 LCDManager.GetInstance().MoveString(_actExt, "-0.1", speedFill);
                 LCDManager.GetInstance().MoveString(_actExt, ConfigurationPrinter.GetInstance().GetLenghtMoveFilUp(), speedFill);
-
+               
                 _actExt = Constants.EXTRUDER.ExtruderSecondary;
                 LCDManager.GetInstance().MoveString(_actExt, "-0.1", speedFill);
                 LCDManager.GetInstance().MoveString(_actExt, "-0.1", speedFill);
@@ -284,6 +446,27 @@ namespace _3D_control_v09
                 LCDManager.GetInstance().MoveString(_actExt, "-0.1", speedFill);
                 LCDManager.GetInstance().MoveString(_actExt, "-0.1", speedFill);
                 LCDManager.GetInstance().MoveString(_actExt, ConfigurationPrinter.GetInstance().GetLenghtMoveFilUp(), speedFill);
+
+                _actExt = Constants.EXTRUDER.ExtruderFourth;
+                LCDManager.GetInstance().MoveString(_actExt, "-0.1", speedFill);
+                LCDManager.GetInstance().MoveString(_actExt, "-0.1", speedFill);
+                LCDManager.GetInstance().MoveString(_actExt, ConfigurationPrinter.GetInstance().GetLenghtMoveFilUp(), speedFill);
+
+                _actExt = Constants.EXTRUDER.ExtruderFifth;
+                LCDManager.GetInstance().MoveString(_actExt, "-0.1", speedFill);
+                LCDManager.GetInstance().MoveString(_actExt, "-0.1", speedFill);
+                LCDManager.GetInstance().MoveString(_actExt, ConfigurationPrinter.GetInstance().GetLenghtMoveFilUp(), speedFill);
+                _actExt = Constants.EXTRUDER.ExtruderSixth;
+                }
+                else
+                {
+                LCDManager.GetInstance().MoveString(_actExt, "-0.1", speedFill);
+                LCDManager.GetInstance().MoveString(_actExt, "-0.1", speedFill);
+                LCDManager.GetInstance().MoveString(_actExt, ConfigurationPrinter.GetInstance().GetLenghtMoveFilUp(), speedFill);
+                }
+                    
+                    
+              
             }
             else
             {
@@ -315,7 +498,7 @@ namespace _3D_control_v09
             //TODO prasarna predela globalne
             if (Program.Type == Constants.TYPE_PRINTER.DREStolice || Program.Type == Constants.TYPE_PRINTER.DGRStolice3)
             {
-                btn_repeat.Text = "150"; 
+                btn_repeat.Text = "Test 150"; 
             }
 
             btn_repeat.Visible = true;
@@ -327,12 +510,13 @@ namespace _3D_control_v09
             string speedFill = "200";
             //TODO prasarna pøedìlat globalnì
             if (Program.Type == Constants.TYPE_PRINTER.DREStolice || Program.Type == Constants.TYPE_PRINTER.DGRStolice3)
-                speedFill = "300";
+                speedFill = "100";
 
            
 
             if (Program.Type == Constants.TYPE_PRINTER.DGRStolice3)
             {
+                if (_actExt == Constants.EXTRUDER.ExtruderSixth) { 
                 _actExt = Constants.EXTRUDER.ExtruderPrimary;
                 LCDManager.GetInstance().MoveString(_actExt, "0.1", speedFill);
                 LCDManager.GetInstance().MoveString(_actExt, "0.1", speedFill);
@@ -347,6 +531,24 @@ namespace _3D_control_v09
                 LCDManager.GetInstance().MoveString(_actExt, "0.1", speedFill);
                 LCDManager.GetInstance().MoveString(_actExt, "0.1", speedFill);
                 LCDManager.GetInstance().MoveString(_actExt, ConfigurationPrinter.GetInstance().GetLenghtMoveFilDown(), speedFill);
+
+                _actExt = Constants.EXTRUDER.ExtruderFourth;
+                LCDManager.GetInstance().MoveString(_actExt, "0.1", speedFill);
+                LCDManager.GetInstance().MoveString(_actExt, "0.1", speedFill);
+                LCDManager.GetInstance().MoveString(_actExt, ConfigurationPrinter.GetInstance().GetLenghtMoveFilDown(), speedFill);
+
+                _actExt = Constants.EXTRUDER.ExtruderFifth;
+                LCDManager.GetInstance().MoveString(_actExt, "0.1", speedFill);
+                LCDManager.GetInstance().MoveString(_actExt, "0.1", speedFill);
+                LCDManager.GetInstance().MoveString(_actExt, ConfigurationPrinter.GetInstance().GetLenghtMoveFilDown(), speedFill);
+                }
+                else
+                {
+                LCDManager.GetInstance().MoveString(_actExt, "0.1", speedFill);
+                LCDManager.GetInstance().MoveString(_actExt, "0.1", speedFill);
+                LCDManager.GetInstance().MoveString(_actExt, ConfigurationPrinter.GetInstance().GetLenghtMoveFilDown(), speedFill);
+
+                }
             }
             else
             {
@@ -365,6 +567,7 @@ namespace _3D_control_v09
 
             rdb_extr1_yes.Checked = true;
             rdb_extr2_no.Checked = false;
+          
         }
 
         private void rdb_2_TapEvent(object sender)
@@ -372,7 +575,77 @@ namespace _3D_control_v09
 
             rdb_extr1_yes.Checked = false;
             rdb_extr2_no.Checked = true;
+           
         }
+
+        private void rdb_3_TapEvent(object sender)
+        {
+
+            rdb_ext3.Checked = true;
+            rdb_ext4.Checked = false;
+            rdb_ext5.Checked = false;
+            rdb_ext6.Checked = false;
+            rdb_ext7.Checked = false;
+            rdb_ext8.Checked = false;
+        }
+
+        private void rdb_4_TapEvent(object sender)
+        {
+
+            rdb_ext3.Checked = false;
+            rdb_ext4.Checked = true;
+            rdb_ext5.Checked = false;
+            rdb_ext6.Checked = false;
+            rdb_ext7.Checked = false;
+            rdb_ext8.Checked = false;
+        }
+
+        private void rdb_5_TapEvent(object sender)
+        {
+
+            rdb_ext3.Checked = false;
+            rdb_ext4.Checked = false;
+            rdb_ext5.Checked = true;
+            rdb_ext6.Checked = false;
+            rdb_ext7.Checked = false;
+            rdb_ext8.Checked = false;
+        }
+
+        private void rdb_6_TapEvent(object sender)
+        {
+
+            rdb_ext3.Checked = false;
+            rdb_ext4.Checked = false;
+            rdb_ext5.Checked = false;
+            rdb_ext6.Checked = true;
+            rdb_ext7.Checked = false;
+            rdb_ext8.Checked = false;
+        }
+
+        private void rdb_7_TapEvent(object sender)
+        {
+
+            rdb_ext3.Checked = false;
+            rdb_ext4.Checked = false;
+            rdb_ext5.Checked = false;
+            rdb_ext6.Checked = false;
+            rdb_ext7.Checked = true;
+            rdb_ext8.Checked = false;
+        }
+
+        private void rdb_8_TapEvent(object sender)
+        {
+
+            rdb_ext3.Checked = false;
+            rdb_ext4.Checked = false;
+            rdb_ext5.Checked = false;
+            rdb_ext6.Checked = false;
+            rdb_ext7.Checked = false;
+            rdb_ext8.Checked = true;
+        }
+        
+
+        
 
         public void UpdateProgressBar()
         {
@@ -391,11 +664,31 @@ namespace _3D_control_v09
 
             if (_actExt == Constants.EXTRUDER.ExtruderSecondary) // T1
             {
-                actTemp = StateHolder.GetInstance().ActTempSecundaryExt;
+                actTemp = StateHolder.GetInstance().ActTempSecondaryExt;
                 setTemp = StateHolder.GetInstance().ActSetTempSecondary;
             
             }
+            if (_actExt == Constants.EXTRUDER.ExtruderThird) // T2
+            {
+                actTemp = StateHolder.GetInstance().ActTempThirdExt;
+                setTemp = StateHolder.GetInstance().ActSetTempThird;
 
+            }
+
+            if (_actExt == Constants.EXTRUDER.ExtruderFourth) // T3
+            {
+                actTemp = StateHolder.GetInstance().ActTempFourthExt;
+                setTemp = StateHolder.GetInstance().ActSetTempFourth;
+
+            }
+            if (_actExt == Constants.EXTRUDER.ExtruderFifth) // T4
+            {
+                actTemp = StateHolder.GetInstance().ActTempFifthExt;
+                setTemp = StateHolder.GetInstance().ActSetTempFifth;
+
+            }
+
+            
             if (setTemp == 0 || setTemp < 0)
             {
                 btn_continue.Enabled = false;
@@ -451,7 +744,7 @@ namespace _3D_control_v09
                 btn_continue.Enabled = false;
             
             //---------------------------------------------------------------------------------------
-            actTemp = StateHolder.GetInstance().ActTempSecundaryExt;
+            actTemp = StateHolder.GetInstance().ActTempSecondaryExt;
             setTemp = StateHolder.GetInstance().ActSetTempSecondary;
 
             progress_change_state2.Value = (int)((actTemp / setTemp) * 100);
@@ -491,6 +784,48 @@ namespace _3D_control_v09
                 btn_continue.Enabled = true;
             else
                 btn_continue.Enabled = false;
+
+            //---------------------------------------------------------------------------------------
+            actTemp = StateHolder.GetInstance().ActTempFourthExt;
+            setTemp = StateHolder.GetInstance().ActSetTempFourth;
+
+            progress_change_state4.Value = (int)((actTemp / setTemp) * 100);
+
+            if (progress_change_state4.Value > 100)
+                progress_change_state4.Value = 100;
+
+            if (setTemp == 0 || setTemp < 0)
+            {
+                btn_continue.Enabled = false;
+                return;
+            }
+
+            //+-5~tolerantni vysledek
+            if (actTemp >= setTemp - 5)
+                btn_continue.Enabled = true;
+            else
+                btn_continue.Enabled = false;
+
+            //---------------------------------------------------------------------------------------
+            actTemp = StateHolder.GetInstance().ActTempFifthExt;
+            setTemp = StateHolder.GetInstance().ActSetTempFifth;
+
+            progress_change_state5.Value = (int)((actTemp / setTemp) * 100);
+
+            if (progress_change_state5.Value > 100)
+                progress_change_state5.Value = 100;
+
+            if (setTemp == 0 || setTemp < 0)
+            {
+                btn_continue.Enabled = false;
+                return;
+            }
+
+            //+-5~tolerantni vysledek
+            if (actTemp >= setTemp - 5)
+                btn_continue.Enabled = true;
+            else
+                btn_continue.Enabled = false;
             
             
             window.FillRect(btn_continue.Rect);
@@ -505,20 +840,83 @@ namespace _3D_control_v09
             window.FillRect(progress_change_state3.Rect);
             progress_change_state3.Invalidate();
 
+            window.FillRect(progress_change_state4.Rect);
+            progress_change_state4.Invalidate();
+
+            window.FillRect(progress_change_state5.Rect);
+            progress_change_state5.Invalidate();
+
         }
 
         private void GetActExtruder()
         {
-            if (rdb_extr1_yes.Checked)
+
+            if (Program.Type == Constants.TYPE_PRINTER.DGRStolice3 || Program.Type == Constants.TYPE_PRINTER.DGRStolice5)
+            { 
+            
+            if (rdb_ext3.Checked)
                 _actExt = Constants.EXTRUDER.ExtruderPrimary;
 
-            if (rdb_extr2_no.Checked)
+            if (rdb_ext4.Checked)
                 _actExt = Constants.EXTRUDER.ExtruderSecondary;
+
+            if (rdb_ext5.Checked)
+                _actExt = Constants.EXTRUDER.ExtruderThird;
+
+            if (rdb_ext6.Checked)
+                _actExt = Constants.EXTRUDER.ExtruderFourth;
+
+            if (rdb_ext7.Checked)
+                _actExt = Constants.EXTRUDER.ExtruderFifth;
+
+            if (rdb_ext8.Checked)
+                _actExt = Constants.EXTRUDER.ExtruderSixth;
+
+            }
+
+            else
+            {
+                if (rdb_extr1_yes.Checked)
+                    _actExt = Constants.EXTRUDER.ExtruderPrimary;
+
+                if (rdb_extr2_no.Checked)
+                    _actExt = Constants.EXTRUDER.ExtruderSecondary;
+
+            }
+
         }
 
         private void btn_change_repeat_PressEvent(object sender)
         {
 
+            if (Program.Type == Constants.TYPE_PRINTER.DGRStolice3)
+            {
+                _actExt = Constants.EXTRUDER.ExtruderPrimary;
+                LCDManager.GetInstance().MoveString(_actExt, "150", "300");
+
+                _actExt = Constants.EXTRUDER.ExtruderSecondary;
+                LCDManager.GetInstance().MoveString(_actExt, "150", "300");
+
+                _actExt = Constants.EXTRUDER.ExtruderThird;
+                LCDManager.GetInstance().MoveString(_actExt, "150", "300");
+
+                _actExt = Constants.EXTRUDER.ExtruderFourth;
+                LCDManager.GetInstance().MoveString(_actExt, "150", "300");
+
+                _actExt = Constants.EXTRUDER.ExtruderFifth;
+                LCDManager.GetInstance().MoveString(_actExt, "150", "300");
+
+                btn_repeat.Enabled = false;
+
+                window.FillRect(btn_repeat.Rect);
+                btn_repeat.Invalidate();
+
+                new Thread(new ThreadStart(waitingInDownFil2sBtnRepeat)).Start();
+            }
+
+            else
+            { 
+           
             LCDManager.GetInstance().MoveString(_actExt, "150", "300");
             btn_repeat.Enabled = false;
 
@@ -526,7 +924,7 @@ namespace _3D_control_v09
             btn_repeat.Invalidate();
 
             new Thread(new ThreadStart(waitingInDownFil2sBtnRepeat)).Start();
-
+            }
         }
 
         private void waitingInDownFil2sBtnRepeat()
@@ -573,6 +971,8 @@ namespace _3D_control_v09
                                     LCDManager.GetInstance().StartHeatingExt(Constants.EXTRUDER.ExtruderPrimary, StateHolder.GetInstance().ActSetTempForCatGut);
                                     LCDManager.GetInstance().StartHeatingExt(Constants.EXTRUDER.ExtruderSecondary, StateHolder.GetInstance().ActSetTempForCatGut);
                                     LCDManager.GetInstance().StartHeatingExt(Constants.EXTRUDER.ExtruderThird, StateHolder.GetInstance().ActSetTempForCatGut);
+                                    LCDManager.GetInstance().StartHeatingExt(Constants.EXTRUDER.ExtruderFourth, StateHolder.GetInstance().ActSetTempForCatGut);
+                                    LCDManager.GetInstance().StartHeatingExt(Constants.EXTRUDER.ExtruderFifth, StateHolder.GetInstance().ActSetTempForCatGut);
                                 }
                                 break;
                             case Constants.TYPE_PRINTER.PresentDeeRed:
